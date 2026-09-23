@@ -1,6 +1,3 @@
-/**
- * App Main Controller: Handles client routing, settings dispatch & inquiries
- */
 const AppRouter = (() => {
   function applySettings() {
     const settings = StorageModule.getSettings();
@@ -18,6 +15,33 @@ const AppRouter = (() => {
 
     document.getElementById('floatingPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
     document.getElementById('floatingWhatsapp').href = `https://wa.me/${settings.whatsapp}?text=Hey,%20I%20am%20looking%20for%20wedding%20services.`;
+  }
+
+  function initMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.className = 'fa fa-times';
+      } else {
+        icon.className = 'fa fa-bars';
+      }
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          menuToggle.querySelector('i').className = 'fa fa-bars';
+        }
+      });
+    });
   }
 
   function handleRoute() {
@@ -41,7 +65,10 @@ const AppRouter = (() => {
   }
 
   function initInquiryForm() {
-    document.getElementById('weddingInquiryForm').addEventListener('submit', (e) => {
+    const form = document.getElementById('weddingInquiryForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       const settings = StorageModule.getSettings();
 
@@ -59,13 +86,10 @@ const AppRouter = (() => {
     });
   }
 
-  function exitAdmin() {
-    window.location.hash = '#home';
-  }
-
   return {
     init: () => {
       applySettings();
+      initMobileMenu();
       ServicesModule.init();
       GalleryModule.init();
       EstimatorModule.init();
@@ -76,12 +100,11 @@ const AppRouter = (() => {
       window.addEventListener('hashchange', handleRoute);
       handleRoute();
     },
-    applySettings,
-    exitAdmin
+    applySettings
   };
 })();
 
-// Bootstrap Application on DOM Ready
+// Bootstrap
 document.addEventListener('DOMContentLoaded', () => {
   AppRouter.init();
 });

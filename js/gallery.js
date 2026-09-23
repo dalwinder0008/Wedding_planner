@@ -1,6 +1,3 @@
-/**
- * Gallery Module: Category Filtering & Dynamic Image Loading
- */
 const GalleryModule = (() => {
   let activeCategory = 'all';
 

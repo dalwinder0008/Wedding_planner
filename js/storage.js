@@ -1,6 +1,3 @@
-/**
- * Storage Module: Centralized Data Layer for the Application
- */
 const StorageModule = (() => {
   const KEYS = {
     SETTINGS: 'grand_settings',

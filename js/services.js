@@ -1,6 +1,3 @@
-/**
- * Services Module: Handles Wedding & Birthday services rendering and Modal Popups
- */
 const ServicesModule = (() => {
   const weddingServices = [
     {

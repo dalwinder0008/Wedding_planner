@@ -95,7 +95,6 @@
   font-size: 12px;
 }
 
-/* Tabs */
 .admin-tabs {
   display: flex;
   gap: 10px;
@@ -193,7 +192,6 @@
   font-size: 11px;
 }
 
-/* Gallery Grid Preview Inside Admin[cite: 3] */
 .admin-gallery-preview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));

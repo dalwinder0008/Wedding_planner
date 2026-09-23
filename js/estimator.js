@@ -1,6 +1,3 @@
-/**
- * Estimator Module: Dynamic Investment Calculator
- */
 const EstimatorModule = (() => {
   function calculate() {
     const eventType = document.getElementById('calcEventType').value;

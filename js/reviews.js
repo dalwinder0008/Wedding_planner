@@ -1,6 +1,3 @@
-/**
- * Reviews Module: Handles Dynamic Rendering and Client Review Submissions
- */
 const ReviewsModule = (() => {
   function render() {
     const container = document.getElementById('reviewsContainer');

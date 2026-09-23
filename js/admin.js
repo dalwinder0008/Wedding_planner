@@ -1,6 +1,3 @@
-/**
- * Admin Module: Authentication, Tab Management, Portfolio CRUD, Birthday Services CRUD & General Settings
- */
 const AdminModule = (() => {
   function initAuth() {
     const loginForm = document.getElementById('adminLoginForm');
@@ -20,6 +17,14 @@ const AdminModule = (() => {
         errorMsg.style.display = 'block';
       }
     });
+
+    document.getElementById('btnAdminLogout').onclick = () => {
+      sessionStorage.removeItem('isAdminLoggedIn');
+      showLogin();
+    };
+
+    document.getElementById('btnBackToSite').onclick = () => { window.location.hash = '#home'; };
+    document.getElementById('btnViewLiveSite').onclick = () => { window.location.hash = '#home'; };
   }
 
   function showDashboard() {
@@ -45,15 +50,20 @@ const AdminModule = (() => {
     document.getElementById('adminDashboard').style.display = 'none';
   }
 
-  function switchTab(tabId) {
-    document.querySelectorAll('.admin-tab-pane').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+  function initTabs() {
+    document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.admin-tab-pane').forEach(p => p.classList.remove('active'));
 
-    document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
+        this.classList.add('active');
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
   }
 
-  // PORTFOLIO IMAGE HANDLERS[cite: 3]
+  // Portfolio Photos
   function initPortfolioForm() {
     document.getElementById('addImageForm').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -111,7 +121,7 @@ const AdminModule = (() => {
     }
   }
 
-  // BIRTHDAY SERVICES CRUD[cite: 4]
+  // Birthday Services CRUD
   function initBirthdayForm() {
     const form = document.getElementById('birthdayServiceForm');
     form.addEventListener('submit', (e) => {
@@ -140,6 +150,8 @@ const AdminModule = (() => {
       resetBirthdayForm();
       alert('Birthday service saved successfully!');
     });
+
+    document.getElementById('bdayCancelEditBtn').onclick = resetBirthdayForm;
   }
 
   function renderAdminBirthdays() {
@@ -197,7 +209,7 @@ const AdminModule = (() => {
     }
   }
 
-  // GENERAL SETTINGS & FOOTER[cite: 1, 5]
+  // General Settings
   function initSettingsForm() {
     document.getElementById('editContentForm').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -271,17 +283,13 @@ const AdminModule = (() => {
   return {
     init: () => {
       initAuth();
+      initTabs();
       initPortfolioForm();
       initBirthdayForm();
       initSettingsForm();
     },
     showDashboard,
     showLogin,
-    switchTab,
-    logout: () => {
-      sessionStorage.removeItem('isAdminLoggedIn');
-      showLogin();
-    },
     deleteGalleryImage,
     editBirthdayService,
     deleteBirthdayService,

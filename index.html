@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Grand Luxury | Bespoke Wedding & Event Planners</title>
   
-  <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome Icons -->
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Modular CSS Files -->
@@ -26,16 +26,22 @@
     <header>
       <div class="nav-container">
         <a href="#home" class="brand-logo serif-font" id="siteLogo">GRAND CELEBRATIONS</a>
+        
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+
         <nav>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#wedding-planner">Weddings</a></li>
-            <li><a href="#birthday-planner">Birthdays</a></li>
-            <li><a href="#estimator">Estimator</a></li>
-            <li><a href="#gallery">Portfolio</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#admin" class="admin-nav-link"><i class="fa fa-lock"></i> Admin</a></li>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#wedding-planner" class="nav-item">Weddings</a></li>
+            <li><a href="#birthday-planner" class="nav-item">Birthdays</a></li>
+            <li><a href="#estimator" class="nav-item">Estimator</a></li>
+            <li><a href="#gallery" class="nav-item">Portfolio</a></li>
+            <li><a href="#reviews" class="nav-item">Reviews</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+            <li><a href="#admin" class="admin-nav-link nav-item"><i class="fa fa-lock"></i> Admin</a></li>
           </ul>
         </nav>
       </div>
@@ -57,20 +63,16 @@
         <h2 class="section-title">Wedding Planning Services</h2>
         <p class="section-subtitle">Comprehensive luxury wedding arrangements tailored to your sacred rituals and celebration style</p>
       </div>
-      <div class="services-grid" id="weddingServicesGrid">
-        <!-- Rendered via JS -->
-      </div>
+      <div class="services-grid" id="weddingServicesGrid"></div>
     </section>
 
-    <!-- BIRTHDAY PARTY PLANNER SERVICES[cite: 4] -->
+    <!-- BIRTHDAY PARTY PLANNER SERVICES -->
     <section class="section-padding birthday-section" id="birthday-planner">
       <div class="section-header">
         <h2 class="section-title">Birthday Party Planning</h2>
         <p class="section-subtitle">Whimsical themes, captivating entertainment, and seamless event execution</p>
       </div>
-      <div class="services-grid" id="birthdayServicesGrid">
-        <!-- Dynamic via Admin/Storage[cite: 4] -->
-      </div>
+      <div class="services-grid" id="birthdayServicesGrid"></div>
     </section>
 
     <!-- BUDGET CALCULATOR / ESTIMATOR -->
@@ -114,7 +116,7 @@
       </div>
     </section>
 
-    <!-- PORTFOLIO / REAL GALLERY[cite: 3] -->
+    <!-- PORTFOLIO / REAL GALLERY -->
     <section class="section-padding" id="gallery">
       <div class="section-header">
         <h2 class="section-title">Our Real Portfolio</h2>
@@ -129,9 +131,7 @@
         <button class="filter-btn" data-category="birthday">Birthdays</button>
       </div>
 
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- Rendered via JS[cite: 3] -->
-      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </section>
 
     <!-- TESTIMONIALS & USER REVIEWS -->
@@ -141,9 +141,7 @@
         <p class="section-subtitle">Real experiences and feedback from our cherished clients</p>
       </div>
 
-      <div class="testimonial-grid" id="reviewsContainer">
-        <!-- Rendered via JS -->
-      </div>
+      <div class="testimonial-grid" id="reviewsContainer"></div>
 
       <div class="add-review-wrapper">
         <h3 class="serif-font" style="text-align: center; margin-bottom: 12px; font-size: 24px;">Leave Your Review</h3>
@@ -167,7 +165,7 @@
       </div>
     </section>
 
-    <!-- GET IN TOUCH FORM[cite: 1] -->
+    <!-- GET IN TOUCH FORM -->
     <section class="contact-wrapper" id="contact">
       <div class="contact-container">
         <h2 class="contact-title serif-font">GET IN TOUCH</h2>
@@ -191,7 +189,7 @@
       </div>
     </section>
 
-    <!-- FOOTER[cite: 1, 5] -->
+    <!-- FOOTER -->
     <footer>
       <div class="footer-grid">
         <div class="footer-col">
@@ -209,7 +207,7 @@
       </div>
     </footer>
 
-    <!-- FLOATING ACTIONS[cite: 2, 5] -->
+    <!-- FLOATING ACTIONS -->
     <div class="floating-actions">
       <a href="tel:9888713224" class="action-btn btn-phone" id="floatingPhone" title="Direct Phone Call">
         <i class="fa fa-phone"></i>
@@ -238,7 +236,7 @@
     <div id="adminLoginScreen" class="admin-login-box">
       <div class="admin-card">
         <h2 class="serif-font" style="margin-bottom: 8px;">Admin Portal Login</h2>
-        <p style="font-size: 13px; color: #777; margin-bottom: 25px;">Enter administrative credentials to manage images, services, and content</p>
+        <p style="font-size: 13px; color: #777; margin-bottom: 25px;">Enter credentials to manage images, services, and content</p>
         <form id="adminLoginForm">
           <div class="admin-form-group">
             <label for="adminUser">Username</label>
@@ -250,7 +248,7 @@
           </div>
           <div id="loginErrorMsg" class="error-msg" style="display: none;">Invalid Username or Password!</div>
           <button type="submit" class="btn-luxury btn-gold" style="width: 100%; margin-top: 15px;">Login to Dashboard</button>
-          <button type="button" class="btn-text-back" onclick="AppRouter.exitAdmin()">Back to Main Website</button>
+          <button type="button" class="btn-text-back" id="btnBackToSite">Back to Main Website</button>
         </form>
       </div>
     </div>
@@ -263,20 +261,20 @@
           <span style="font-size: 13px; color: #888;">Logged in as: <strong>Admin@1</strong></span>
         </div>
         <div style="display: flex; gap: 10px;">
-          <button class="btn-admin-action" onclick="AppRouter.exitAdmin()"><i class="fa fa-eye"></i> View Live Site</button>
-          <button class="btn-admin-danger" onclick="AdminModule.logout()"><i class="fa fa-sign-out-alt"></i> Logout</button>
+          <button class="btn-admin-action" id="btnViewLiveSite"><i class="fa fa-eye"></i> View Live Site</button>
+          <button class="btn-admin-danger" id="btnAdminLogout"><i class="fa fa-sign-out-alt"></i> Logout</button>
         </div>
       </div>
 
       <!-- TABS -->
       <div class="admin-tabs">
-        <button class="admin-tab-btn active" onclick="AdminModule.switchTab('tabPortfolio')"><i class="fa fa-images"></i> Manage Portfolio Images</button>
-        <button class="admin-tab-btn" onclick="AdminModule.switchTab('tabBirthdays')"><i class="fa fa-birthday-cake"></i> Manage Birthday Services</button>
-        <button class="admin-tab-btn" onclick="AdminModule.switchTab('tabGeneral')"><i class="fa fa-cog"></i> General Settings & Footer</button>
-        <button class="admin-tab-btn" onclick="AdminModule.switchTab('tabReviews')"><i class="fa fa-star"></i> Reviews & Inquiries</button>
+        <button class="admin-tab-btn active" data-tab="tabPortfolio"><i class="fa fa-images"></i> Manage Portfolio Images</button>
+        <button class="admin-tab-btn" data-tab="tabBirthdays"><i class="fa fa-birthday-cake"></i> Manage Birthday Services</button>
+        <button class="admin-tab-btn" data-tab="tabGeneral"><i class="fa fa-cog"></i> General Settings & Footer</button>
+        <button class="admin-tab-btn" data-tab="tabReviews"><i class="fa fa-star"></i> Reviews & Inquiries</button>
       </div>
 
-      <!-- TAB 1: MANAGE PORTFOLIO[cite: 3] -->
+      <!-- TAB 1: PORTFOLIO -->
       <section id="tabPortfolio" class="admin-tab-pane active">
         <div class="admin-content-grid">
           <div class="admin-section-card">
@@ -312,7 +310,7 @@
         </div>
       </section>
 
-      <!-- TAB 2: MANAGE BIRTHDAY SERVICES[cite: 4] -->
+      <!-- TAB 2: BIRTHDAYS -->
       <section id="tabBirthdays" class="admin-tab-pane">
         <div class="admin-content-grid">
           <div class="admin-section-card">
@@ -332,7 +330,7 @@
                 <textarea id="bdayDetailedDesc" rows="3" placeholder="Complete details for modal popup" required></textarea>
               </div>
               <button type="submit" id="bdaySubmitBtn" class="btn-luxury btn-gold" style="width: 100%;">Add Service</button>
-              <button type="button" id="bdayCancelEditBtn" onclick="AdminModule.resetBirthdayForm()" style="display:none; margin-top:8px; width:100%;" class="btn-text-back">Cancel Edit</button>
+              <button type="button" id="bdayCancelEditBtn" style="display:none; margin-top:8px; width:100%;" class="btn-text-back">Cancel Edit</button>
             </form>
           </div>
 
@@ -343,7 +341,7 @@
         </div>
       </section>
 
-      <!-- TAB 3: GENERAL SETTINGS & FOOTER[cite: 1, 5] -->
+      <!-- TAB 3: GENERAL & FOOTER -->
       <section id="tabGeneral" class="admin-tab-pane">
         <div class="admin-section-card" style="max-width: 750px; margin: auto;">
           <h3>Homepage & Footer Details</h3>
@@ -361,7 +359,7 @@
               <input type="text" id="editPhone" required>
             </div>
             <div class="admin-form-group">
-              <label for="editWhatsapp">WhatsApp Number (With country code, no + or spaces)</label>
+              <label for="editWhatsapp">WhatsApp Number (Country code included, no + or spaces)</label>
               <input type="text" id="editWhatsapp" required>
             </div>
             <div class="admin-form-group">
@@ -393,7 +391,7 @@
     </div>
   </aside>
 
-  <!-- Modular Scripts Loaded In Proper Execution Order -->
+  <!-- Modular Scripts in Order -->
   <script src="js/storage.js"></script>
   <script src="js/services.js"></script>
   <script src="js/gallery.js"></script>
