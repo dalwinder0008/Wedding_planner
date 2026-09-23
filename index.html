@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Grand Luxury | Bespoke Wedding & Event Planners</title>
+  
+  <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ================= CLIENT FRONTEND VIEW ================= -->
+  <main id="mainWebsiteView">
+    <!-- NAVIGATION BAR -->
+    <header>
+      <div class="nav-container">
+        <a href="#home" class="brand-logo serif-font" id="siteLogo">GRAND CELEBRATIONS</a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#wedding-planner">Weddings</a></li>
+            <li><a href="#birthday-planner">Birthdays</a></li>
+            <li><a href="#estimator">Estimator</a></li>
+            <li><a href="#gallery">Portfolio</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#admin" class="admin-nav-link"><i class="fa fa-lock"></i> Admin</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <h1 id="heroTitle">Complete Your Dream For The Best Wedding</h1>
+      <p id="heroSubtitle">Leave the planning stress to us. Creating unforgettable memories for your special day is our utmost commitment.</p>
+      <div class="hero-btn-group">
+        <a href="#wedding-planner" class="btn-luxury">Explore Services</a>
+        <a href="#estimator" class="btn-luxury btn-gold">Estimate Budget</a>
+      </div>
+    </section>
+
+    <!-- WEDDING PLANNER SERVICES -->
+    <section class="section-padding" id="wedding-planner">
+      <div class="section-header">
+        <h2 class="section-title">Wedding Planning Services</h2>
+        <p class="section-subtitle">Comprehensive luxury wedding arrangements tailored to your sacred rituals and celebration style</p>
+      </div>
+      <div class="services-grid" id="weddingServicesGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- BIRTHDAY PARTY PLANNER SERVICES[cite: 4] -->
+    <section class="section-padding birthday-section" id="birthday-planner">
+      <div class="section-header">
+        <h2 class="section-title">Birthday Party Planning</h2>
+        <p class="section-subtitle">Whimsical themes, captivating entertainment, and seamless event execution</p>
+      </div>
+      <div class="services-grid" id="birthdayServicesGrid">
+        <!-- Dynamic via Admin/Storage[cite: 4] -->
+      </div>
+    </section>
+
+    <!-- BUDGET CALCULATOR / ESTIMATOR -->
+    <section class="section-padding" id="estimator">
+      <div class="section-header">
+        <h2 class="section-title">Event Budget Estimator</h2>
+        <p class="section-subtitle">Calculate an instant estimated price based on your event requirements</p>
+      </div>
+
+      <div class="calc-box">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="calcEventType">Event Type</label>
+            <select id="calcEventType">
+              <option value="wedding">Full Wedding Ceremony</option>
+              <option value="prewedding">Pre-Wedding / Sangeet / Haldi</option>
+              <option value="birthday">Birthday Party Celebration</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="guestCount">Estimated Guests: <span id="guestCountVal" class="guest-count-val">250</span></label>
+            <input type="range" id="guestCount" min="50" max="1500" step="50" value="250">
+          </div>
+        </div>
+
+        <label class="calc-field-title">Select Services Required:</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" id="srvDecor" checked> Theme Decor & Lighting</label>
+          <label class="checkbox-item"><input type="checkbox" id="srvCatering" checked> Catering & Gourmet Menu</label>
+          <label class="checkbox-item"><input type="checkbox" id="srvPhoto" checked> Photography & Video Film</label>
+          <label class="checkbox-item"><input type="checkbox" id="srvDj" checked> DJ, Sound & Production</label>
+          <label class="checkbox-item"><input type="checkbox" id="srvCoordination"> On-Day Coordination</label>
+        </div>
+
+        <div class="estimate-result">
+          <p class="result-title">Estimated Investment Range</p>
+          <span id="estimatedPriceDisplay">₹ 2,75,000 - ₹ 3,50,000</span>
+          <button class="btn-luxury btn-gold" id="btnSendBudget">Share Estimate On WhatsApp</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / REAL GALLERY[cite: 3] -->
+    <section class="section-padding" id="gallery">
+      <div class="section-header">
+        <h2 class="section-title">Our Real Portfolio</h2>
+        <p class="section-subtitle">Take a glimpse into our real weddings and grand celebrations</p>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="wedding">Weddings</button>
+        <button class="filter-btn" data-category="haldi">Haldi & Mehendi</button>
+        <button class="filter-btn" data-category="sangeet">Sangeet & DJ</button>
+        <button class="filter-btn" data-category="birthday">Birthdays</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Rendered via JS[cite: 3] -->
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS & USER REVIEWS -->
+    <section class="section-padding reviews-section" id="reviews">
+      <div class="section-header">
+        <h2 class="section-title">Client Love & Testimonials</h2>
+        <p class="section-subtitle">Real experiences and feedback from our cherished clients</p>
+      </div>
+
+      <div class="testimonial-grid" id="reviewsContainer">
+        <!-- Rendered via JS -->
+      </div>
+
+      <div class="add-review-wrapper">
+        <h3 class="serif-font" style="text-align: center; margin-bottom: 12px; font-size: 24px;">Leave Your Review</h3>
+        <p style="text-align:center; font-size: 13px; color: #777; margin-bottom: 25px;">Your genuine feedback means the world to us!</p>
+        
+        <form id="userReviewForm">
+          <div class="review-form-grid">
+            <input type="text" id="reviewAuthor" placeholder="Your Full Name" required>
+            <input type="text" id="reviewCity" placeholder="City / Event (e.g., Delhi Wedding)" required>
+            <select id="reviewRating" required>
+              <option value="5">⭐⭐⭐⭐⭐ (5 Stars - Exceptional)</option>
+              <option value="4">⭐⭐⭐⭐ (4 Stars - Great)</option>
+              <option value="3">⭐⭐⭐ (3 Stars - Good)</option>
+            </select>
+          </div>
+          <textarea id="reviewComment" rows="3" placeholder="Describe your experience with our services..." required></textarea>
+          <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="btn-luxury btn-gold">Submit Review</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- GET IN TOUCH FORM[cite: 1] -->
+    <section class="contact-wrapper" id="contact">
+      <div class="contact-container">
+        <h2 class="contact-title serif-font">GET IN TOUCH</h2>
+        <form id="weddingInquiryForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <input type="text" id="clientName" placeholder="NAME" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="clientNumber" placeholder="NUMBER" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="weddingDate" placeholder="WEDDING DATE" onfocus="(this.type='date')" onblur="(this.type='text')">
+            </div>
+            <div class="form-group">
+              <input type="text" id="moreInfo" placeholder="MORE INFO">
+            </div>
+          </div>
+          <button type="submit" class="btn-send">SEND</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER[cite: 1, 5] -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 class="serif-font">EMAIL</h4>
+          <p><a href="mailto:dalwinderkarnawal1322@gmail.com" id="footerEmail">dalwinderkarnawal1322@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="serif-font">CALL US</h4>
+          <p><a href="tel:+919888713224" id="footerPhone">+91 98887 13224</a></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="serif-font">FOLLOW</h4>
+          <p><a href="#" id="footerHandle">@grandeventsindia</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING ACTIONS[cite: 2, 5] -->
+    <div class="floating-actions">
+      <a href="tel:9888713224" class="action-btn btn-phone" id="floatingPhone" title="Direct Phone Call">
+        <i class="fa fa-phone"></i>
+      </a>
+      <a href="https://wa.me/919888713224?text=Hey,%20I%20am%20looking%20for%20wedding%20services." target="_blank" class="action-btn btn-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <!-- SERVICE DETAIL MODAL -->
+    <div class="modal-overlay" id="serviceModal">
+      <div class="modal-content">
+        <button class="close-modal" id="closeModalBtn" aria-label="Close Modal">&times;</button>
+        <h3 class="serif-font modal-title" id="modalTitle">Service Title</h3>
+        <p class="modal-desc" id="modalDesc">Service details</p>
+        <button class="btn-luxury btn-gold modal-btn" id="modalBookBtn">
+          Inquire For This Service On WhatsApp
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= ADMIN PORTAL VIEW (#admin) ================= -->
+  <aside id="adminContainer" class="admin-wrapper" style="display: none;">
+    <!-- LOGIN SCREEN -->
+    <div id="adminLoginScreen" class="admin-login-box">
+      <div class="admin-card">
+        <h2 class="serif-font" style="margin-bottom: 8px;">Admin Portal Login</h2>
+        <p style="font-size: 13px; color: #777; margin-bottom: 25px;">Enter administrative credentials to manage images, services, and content</p>
+        <form id="adminLoginForm">
+          <div class="admin-form-group">
+            <label for="adminUser">Username</label>
+            <input type="text" id="adminUser" placeholder="Enter Username" required>
+          </div>
+          <div class="admin-form-group">
+            <label for="adminPass">Password</label>
+            <input type="password" id="adminPass" placeholder="Enter Password" required>
+          </div>
+          <div id="loginErrorMsg" class="error-msg" style="display: none;">Invalid Username or Password!</div>
+          <button type="submit" class="btn-luxury btn-gold" style="width: 100%; margin-top: 15px;">Login to Dashboard</button>
+          <button type="button" class="btn-text-back" onclick="AppRouter.exitAdmin()">Back to Main Website</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="adminDashboard" style="display: none;" class="admin-dashboard">
+      <div class="admin-topbar">
+        <div>
+          <h2 class="serif-font">Control Center & Dashboard</h2>
+          <span style="font-size: 13px; color: #888;">Logged in as: <strong>Admin@1</strong></span>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn-admin-action" onclick="AppRouter.exitAdmin()"><i class="fa fa-eye"></i> View Live Site</button>
+          <button class="btn-admin-danger" onclick="AdminModule.logout()"><i class="fa fa-sign-out-alt"></i> Logout</button>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" onclick="AdminModule.switchTab('tabPortfolio')"><i class="fa fa-images"></i> Manage Portfolio Images</button>
+        <button class="admin-tab-btn" onclick="AdminModule.switchTab('tabBirthdays')"><i class="fa fa-birthday-cake"></i> Manage Birthday Services</button>
+        <button class="admin-tab-btn" onclick="AdminModule.switchTab('tabGeneral')"><i class="fa fa-cog"></i> General Settings & Footer</button>
+        <button class="admin-tab-btn" onclick="AdminModule.switchTab('tabReviews')"><i class="fa fa-star"></i> Reviews & Inquiries</button>
+      </div>
+
+      <!-- TAB 1: MANAGE PORTFOLIO[cite: 3] -->
+      <section id="tabPortfolio" class="admin-tab-pane active">
+        <div class="admin-content-grid">
+          <div class="admin-section-card">
+            <h3>Add New Portfolio Image</h3>
+            <form id="addImageForm">
+              <div class="admin-form-group">
+                <label for="newImageCategory">Select Category</label>
+                <select id="newImageCategory" required>
+                  <option value="wedding">Weddings</option>
+                  <option value="haldi">Haldi & Mehendi</option>
+                  <option value="sangeet">Sangeet & DJ</option>
+                  <option value="birthday">Birthdays</option>
+                </select>
+              </div>
+              <div class="admin-form-group">
+                <label for="newImageFile">Upload From Device</label>
+                <input type="file" id="newImageFile" accept="image/*">
+                <small style="color: #777;">Or provide image URL below:</small>
+              </div>
+              <div class="admin-form-group">
+                <label for="newImageUrl">Direct Image URL</label>
+                <input type="url" id="newImageUrl" placeholder="https://images.unsplash.com/...">
+              </div>
+              <button type="submit" class="btn-luxury btn-gold" style="width:100%;">Upload & Add To Portfolio</button>
+            </form>
+          </div>
+
+          <div class="admin-section-card">
+            <h3>Existing Portfolio Photos</h3>
+            <p style="font-size: 13px; color: #777; margin-bottom: 15px;">Delete or view current images in the gallery:</p>
+            <div id="adminGalleryList" class="admin-gallery-preview-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: MANAGE BIRTHDAY SERVICES[cite: 4] -->
+      <section id="tabBirthdays" class="admin-tab-pane">
+        <div class="admin-content-grid">
+          <div class="admin-section-card">
+            <h3 id="birthdayFormHeading">Add New Birthday Service</h3>
+            <form id="birthdayServiceForm">
+              <input type="hidden" id="editBirthdayServiceId">
+              <div class="admin-form-group">
+                <label for="bdayTitle">Service Title</label>
+                <input type="text" id="bdayTitle" placeholder="e.g., Theme Balloon Setup" required>
+              </div>
+              <div class="admin-form-group">
+                <label for="bdayShortDesc">Short Description (Card View)</label>
+                <textarea id="bdayShortDesc" rows="3" placeholder="Brief summary visible on homepage card" required></textarea>
+              </div>
+              <div class="admin-form-group">
+                <label for="bdayDetailedDesc">Detailed Inclusions (Popup View)</label>
+                <textarea id="bdayDetailedDesc" rows="3" placeholder="Complete details for modal popup" required></textarea>
+              </div>
+              <button type="submit" id="bdaySubmitBtn" class="btn-luxury btn-gold" style="width: 100%;">Add Service</button>
+              <button type="button" id="bdayCancelEditBtn" onclick="AdminModule.resetBirthdayForm()" style="display:none; margin-top:8px; width:100%;" class="btn-text-back">Cancel Edit</button>
+            </form>
+          </div>
+
+          <div class="admin-section-card">
+            <h3>Current Birthday Planning Services</h3>
+            <div id="adminBirthdayList" class="admin-list-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: GENERAL SETTINGS & FOOTER[cite: 1, 5] -->
+      <section id="tabGeneral" class="admin-tab-pane">
+        <div class="admin-section-card" style="max-width: 750px; margin: auto;">
+          <h3>Homepage & Footer Details</h3>
+          <form id="editContentForm">
+            <div class="admin-form-group">
+              <label for="editHeroTitle">Hero Headline</label>
+              <input type="text" id="editHeroTitle" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="editHeroSubtitle">Hero Subtitle / Tagline</label>
+              <textarea id="editHeroSubtitle" rows="3" required></textarea>
+            </div>
+            <div class="admin-form-group">
+              <label for="editPhone">Contact Phone Number</label>
+              <input type="text" id="editPhone" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="editWhatsapp">WhatsApp Number (With country code, no + or spaces)</label>
+              <input type="text" id="editWhatsapp" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="editEmail">Contact Email Address</label>
+              <input type="email" id="editEmail" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="editSocialHandle">Social Media Handle (Footer)</label>
+              <input type="text" id="editSocialHandle" required>
+            </div>
+            <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Save Website & Footer Changes</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- TAB 4: REVIEWS & INQUIRIES -->
+      <section id="tabReviews" class="admin-tab-pane">
+        <div class="admin-content-grid">
+          <div class="admin-section-card">
+            <h3>Manage Client Reviews</h3>
+            <div id="adminReviewsList" class="admin-list-container"></div>
+          </div>
+          <div class="admin-section-card">
+            <h3>Received Form Inquiries</h3>
+            <div id="adminInquiriesList" class="admin-list-container"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <!-- Modular Scripts Loaded In Proper Execution Order -->
+  <script src="js/storage.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/estimator.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
