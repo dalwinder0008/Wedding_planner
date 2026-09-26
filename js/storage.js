@@ -8,7 +8,7 @@ const StorageModule = (() => {
   };
 
   const defaultSettings = {
-    heroTitle: "Your Vision, Our Passion <br> Perfect Weddings & Events",
+    heroTitle: "Your Vision, Our Passion Perfect Weddings & Events",
     heroSubtitle: "Leave the planning stress to us. Creating unforgettable memories for your special day is our utmost commitment.",
     phone: "+91 98887 13224",
     whatsapp: "919888713224",
