@@ -37,6 +37,16 @@ const ServicesModule = (() => {
     }
   ];
 
+  const serviceIcons = {
+    "Decor & Theme Styling": "fa-palette",
+    "Grand Entries & Effects": "fa-wand-magic-sparkles",
+    "Catering & Live Food Stalls": "fa-utensils",
+    "Photography & Cinematic Film": "fa-camera-retro",
+    "Bridal Makeup & Mehendi": "fa-hand-sparkles",
+    "DJ, Sound & Baraat Procession": "fa-music",
+    "Day-of Coordination": "fa-calendar-check"
+  };
+
   function renderWeddings() {
     const grid = document.getElementById('weddingServicesGrid');
     if (!grid) return;
@@ -46,6 +56,10 @@ const ServicesModule = (() => {
       const card = document.createElement('div');
       card.className = 'service-card';
       card.innerHTML = `
+        <div class="service-card-top">
+          <span class="service-icon"><i class="fa ${serviceIcons[s.title] || 'fa-sparkles'}"></i></span>
+          <span class="service-number">0${weddingServices.indexOf(s) + 1}</span>
+        </div>
         <div>
           <h3>${StorageModule.escapeHtml(s.title)}</h3>
           <p>${StorageModule.escapeHtml(s.shortDesc)}</p>
@@ -68,6 +82,10 @@ const ServicesModule = (() => {
       const card = document.createElement('div');
       card.className = 'service-card';
       card.innerHTML = `
+        <div class="service-card-top">
+          <span class="service-icon"><i class="fa ${serviceIcons[s.title] || 'fa-cake-candles'}"></i></span>
+          <span class="service-number">BIRTHDAY</span>
+        </div>
         <div>
           <h3>${StorageModule.escapeHtml(s.title)}</h3>
           <p>${StorageModule.escapeHtml(s.shortDesc)}</p>

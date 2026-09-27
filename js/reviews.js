@@ -48,4 +48,4 @@ const ReviewsModule = (() => {
     },
     render
   };
-})();
+})();s

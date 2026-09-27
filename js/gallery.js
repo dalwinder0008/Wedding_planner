@@ -13,7 +13,15 @@ const GalleryModule = (() => {
         const div = document.createElement('div');
         div.className = 'gallery-item';
         div.setAttribute('data-category', item.category);
-        div.innerHTML = `<img src="${item.url}" alt="${StorageModule.escapeHtml(item.category)}" loading="lazy">`;
+        const label = item.category === 'haldi' ? 'Haldi & Mehendi' :
+          item.category === 'sangeet' ? 'Sangeet & DJ' :
+          item.category === 'birthday' ? 'Birthday Celebrations' : 'Wedding Stories';
+        div.innerHTML = `
+          <img src="${item.url}" alt="${StorageModule.escapeHtml(label)}" loading="lazy">
+          <div class="gallery-caption">
+            <span>${StorageModule.escapeHtml(label)}</span>
+            <i class="fa fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </div>`;
         grid.appendChild(div);
       }
     });

@@ -8,12 +8,8 @@ const StorageModule = (() => {
   };
 
   const defaultSettings = {
-<<<<<<< HEAD
-    heroTitle: "Your Vision, Our Passion, Perfect Weddings & Events",
-=======
-    heroTitle: "Your Vision, Our Passion Perfect Weddings & Events",
->>>>>>> 32f5c204059989aea69c5c815513dd89b8a5b88c
-    heroSubtitle: "Leave the planning stress to us. Creating unforgettable memories for your special day is our utmost commitment.",
+    heroTitle: "Your once-in-a-lifetime celebration, beautifully planned.",
+    heroSubtitle: "From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.",
     phone: "+91 98887 13224",
     whatsapp: "919888713224",
     email: "dalwinderkarnawal1322@gmail.com",
