@@ -39,12 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const defaultGallery = [
-    { id: 1, category: "wedding", url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" },
-    { id: 2, category: "haldi", url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=80" },
-    { id: 3, category: "sangeet", url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&q=80" },
-    { id: 4, category: "birthday", url: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80" },
-    { id: 5, category: "wedding", url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=700&q=80" },
-    { id: 6, category: "haldi", url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80" }
+    { id: 1, category: "wedding", url: "public/g-entry.webp" },
+    { id: 2, category: "wedding", url: "public/luxury-wedding-car-baraat-arrival-ecr-chennai-gallery_section-9-1.jpg" },
+    { id: 3, category: "haldi", url: "public/Indian-bridal-makeup-looks-2.jpg" },
+    { id: 4, category: "sangeet", url: "public/dayofcoordination.jpg" },
+    { id: 5, category: "birthday", url: "public/Brthday/concept,themeand%20decoration.jpg" },
+    { id: 6, category: "wedding", url: "public/shooting.jpg" },
+    { id: 7, category: "wedding", url: "public/foodandketringt.jpg" }
   ];
 
   const defaultReviews = [
