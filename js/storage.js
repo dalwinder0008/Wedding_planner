@@ -47,7 +47,7 @@ const StorageModule = (() => {
     { id: 1, category: "wedding", url: "public/g-entry.webp" },
     { id: 2, category: "wedding", url: "public/luxury-wedding-car-baraat-arrival-ecr-chennai-gallery_section-9-1.jpg" },
     { id: 3, category: "haldi", url: "public/Indian-bridal-makeup-looks-2.jpg" },
-    { id: 4, category: "sangeet", url: "public/dayofcoordination.jpg" },
+    { id: 4, category: "sangeet", url: "public/dj.webp" },
     { id: 5, category: "birthday", url: "public/Brthday/concept,themeand%20decoration.jpg" },
     { id: 6, category: "wedding", url: "public/shooting.jpg" },
     { id: 7, category: "wedding", url: "public/foodandketringt.jpg" }
