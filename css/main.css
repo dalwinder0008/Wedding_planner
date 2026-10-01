@@ -62,15 +62,48 @@ header {
 
 .brand-logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   flex-shrink: 0;
 }
 
 .logo-img {
-  width: 58px;
-  height: 58px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
   display: block;
+  margin-bottom: -14px;
+}
+
+.logo-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 76%;
+  margin: 2px 0;
+  color: var(--gold);
+}
+
+.logo-divider::before,
+.logo-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+}
+
+.logo-divider i {
+  font-size: 10px;
+}
+
+.logo-tagline {
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 nav {
