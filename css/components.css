@@ -80,7 +80,7 @@
   justify-content: space-between;
   min-height: 255px;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-  border-radius: 14px;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
 }
@@ -296,7 +296,7 @@
 
 .gallery-item {
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 8px;
   height: 290px;
   position: relative;
   background: var(--plum);
@@ -353,7 +353,7 @@
   background: #fff;
   border: 1px solid #f0e8de;
   padding: 30px;
-  border-radius: 14px;
+  border-radius: 8px;
   box-shadow: 0 8px 22px rgba(69, 45, 59, 0.04);
 }
 

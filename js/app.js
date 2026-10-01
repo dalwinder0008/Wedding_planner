@@ -20,24 +20,27 @@ const AppRouter = (() => {
   function initMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
+    const navContainer = document.querySelector('.nav-container');
     const navItems = document.querySelectorAll('.nav-item');
 
-    if (!menuToggle || !navLinks) return;
+    if (!menuToggle || !navLinks || !navContainer) return;
 
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      const icon = menuToggle.querySelector('i');
-      if (navLinks.classList.contains('active')) {
-        icon.className = 'fa fa-times';
-      } else {
-        icon.className = 'fa fa-bars';
-      }
+      const isOpen = navLinks.classList.contains('active');
+      navContainer.classList.toggle('menu-open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.querySelector('i').className = isOpen ? 'fa fa-times' : 'fa fa-bars';
     });
 
     navItems.forEach(item => {
       item.addEventListener('click', () => {
         if (navLinks.classList.contains('active')) {
           navLinks.classList.remove('active');
+          navContainer.classList.remove('menu-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Open navigation menu');
           menuToggle.querySelector('i').className = 'fa fa-bars';
         }
       });

@@ -26,30 +26,33 @@
     <!-- NAVIGATION BAR -->
     <header>
       <div class="nav-container">
-  <a href="#home" class="brand-logo" id="siteLogo">
-    <img src="public/new-logo.png" alt="Wedhappy.in Logo" class="logo-img">
-  </a>
+        <a href="#home" class="brand-logo" id="siteLogo" aria-label="Wedhappy.in home">
+          <img src="public/newlogo.png" alt="Wedhappy.in" class="logo-img">
+        </a>
 
-  <nav>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-item">Home</a></li>
-      <li><a href="#wedding-planner" class="nav-item">Weddings</a></li>
-      <li><a href="#birthday-planner" class="nav-item">Birthdays</a></li>
-      <li><a href="#estimator" class="nav-item">Estimator</a></li>
-      <li><a href="#gallery" class="nav-item">Portfolio</a></li>
-      <li><a href="#reviews" class="nav-item">Reviews</a></li>
-      <li><a href="#contact" class="nav-item">Contact</a></li>
-      <li><a href="#admin" class="admin-nav-link nav-item"><i class="fa fa-lock"></i> Admin</a></li>
-    </ul>
-  </nav>
-</div>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#wedding-planner" class="nav-item">Weddings</a></li>
+            <li><a href="#birthday-planner" class="nav-item">Birthdays</a></li>
+            <li><a href="#estimator" class="nav-item">Estimator</a></li>
+            <li><a href="#gallery" class="nav-item">Portfolio</a></li>
+            <li><a href="#reviews" class="nav-item">Reviews</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
+            <li><a href="#admin" class="admin-nav-link nav-item"><i class="fa fa-lock" aria-hidden="true"></i> Admin</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
       <span class="hero-eyebrow">WEDDINGS <i class="fa fa-diamond"></i> BIRTHDAYS <i class="fa fa-diamond"></i> UNFORGETTABLE MOMENTS</span>
-      <h1 id="heroTitle">Your Vision,Our Passion,Perfect Weddings & Events</h1>
-      <p id="heroSubtitle">Leave the planning stress to us. Creating unforgettable memories for your special day is our utmost commitment.</p>
+      <h1 id="heroTitle">Your once-in-a-lifetime celebration, beautifully planned.</h1>
+      <p id="heroSubtitle">From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.</p>
       <div class="hero-btn-group">
         <a href="#wedding-planner" class="btn-luxury">Explore Services</a>
         <a href="#estimator" class="btn-luxury btn-gold">Estimate Budget</a>

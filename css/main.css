@@ -39,15 +39,24 @@ a {
   text-decoration: none;
   color: inherit;
 }
-/* Navigation Alignment & Logo Size Fix */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(251, 248, 243, 0.97);
+  border-bottom: 1px solid rgba(69, 45, 59, 0.1);
+  backdrop-filter: blur(12px);
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 24px;
+  min-height: 76px;
+  padding: 8px 24px;
   display: flex;
-  justify-content: flex-start; /* Logo aur Nav links ko paas laane ke liye */
+  justify-content: flex-start;
   align-items: center;
-  gap: 36px; /* Logo aur nav menu ke beech ka gap */
+  gap: 32px;
   position: relative;
 }
 
@@ -57,10 +66,9 @@ a {
   flex-shrink: 0;
 }
 
-/* Perfect Logo Size Range (45px - 50px) */
 .logo-img {
-  height: 48px; 
-  width: auto;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   display: block;
 }
@@ -74,7 +82,7 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 18px;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -89,15 +97,44 @@ nav {
 .nav-item {
   text-decoration: none;
   color: var(--primary-color, #333);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
   color: var(--gold, #c59d5f);
+}
+
+.admin-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid var(--border-gray);
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.admin-nav-link:hover {
+  border-color: var(--gold);
+  background: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--plum);
+  background: #fff;
+  border: 1px solid var(--border-gray);
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  font-size: 17px;
 }
 /* HERO */
 .hero {
@@ -220,9 +257,25 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-container { padding: 14px 18px; }
-  .brand-copy strong { font-size: 12px; letter-spacing: 1.6px; }
-  .brand-copy small { font-size: 7px; letter-spacing: 1.3px; }
+  .nav-container { padding: 8px 18px; }
+  .nav-container nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 18px;
+    right: 18px;
+    width: auto;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid var(--border-gray);
+    box-shadow: 0 14px 28px rgba(45, 32, 39, 0.12);
+  }
+  .nav-container.menu-open nav { display: block; }
+  .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-links li:last-child { margin-left: 0; }
+  .nav-item { display: flex; padding: 12px; }
+  .admin-nav-link { border: 0; }
+  .menu-toggle { display: grid; margin-left: auto; }
   .hero { min-height: 650px; padding: 30px 22px; }
   .hero-eyebrow { font-size: 9px; letter-spacing: 2px; line-height: 1.8; }
   .hero h1 { font-size: 38px; }
