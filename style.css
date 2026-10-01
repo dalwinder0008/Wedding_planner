@@ -37,44 +37,96 @@ a {
   color: inherit;
 }
 
-/* HEADER & NAVIGATION */
+/* ========================================================
+   HEADER & RESPONSIVE NAVIGATION
+   ======================================================== */
+
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(250, 247, 242, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(250, 247, 242, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav-container {
+  width: 100%;
   max-width: 1280px;
-  margin: auto;
-  padding: 20px 30px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 8px 30px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 28px;
+  position: relative;
 }
 
+/* LOGO */
 .brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
   font-size: 26px;
   font-weight: 600;
   letter-spacing: 4px;
+  line-height: 1;
+}
+
+.brand-logo img,
+.brand-logo .logo-img {
+  width: auto;
+  height: 52px;
+  max-width: 150px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* NAV */
+nav {
+  flex: 1;
+  min-width: 0;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
   align-items: center;
 }
 
+.nav-links li:last-child {
+  margin-left: auto;
+}
+
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+
   font-size: 12.5px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -84,13 +136,48 @@ header {
 .admin-nav-link {
   color: #777;
   border: 1px solid #ddd;
-  padding: 5px 12px;
+  padding: 6px 12px;
   border-radius: 3px;
 }
 
 .admin-nav-link:hover {
   background-color: #333;
   color: #fff !important;
+  border-color: #333;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: 1px solid #d8d0c8;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--primary-color);
+
+  font-family: inherit;
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle.active {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
 }
 
 /* HERO */
@@ -833,10 +920,209 @@ footer {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .admin-content-grid { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 34px; }
-  .nav-links { display: none; }
+/* ========================================================
+   RESPONSIVE DESIGN
+   ======================================================== */
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .nav-container {
+    padding-left: 22px;
+    padding-right: 22px;
+    gap: 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 11.5px;
+    letter-spacing: 1.1px;
+  }
+
+  .brand-logo img,
+  .brand-logo .logo-img {
+    height: 48px;
+  }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  .nav-container {
+    min-height: 64px;
+    height: 64px;
+    padding: 7px 16px;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  /* Keep logo clean and properly sized */
+  .brand-logo {
+    max-width: 150px;
+  }
+
+  .brand-logo img,
+  .brand-logo .logo-img {
+    height: 48px;
+    max-width: 135px;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  /* Mobile dropdown */
+  nav {
+    position: static;
+  }
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    padding: 8px 16px 14px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    background: rgba(250, 247, 242, 0.99);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li,
+  .nav-links li:last-child {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 8px;
+
+    justify-content: flex-start;
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-links li:last-child a {
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    padding-left: 12px;
+  }
+
+  .admin-nav-link {
+    justify-content: flex-start;
+  }
+
+  /* Existing page responsiveness */
+  .hero {
+    min-height: 650px;
+    height: auto;
+    padding: 80px 22px 50px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-btn-group {
+    width: 100%;
+    flex-direction: column;
+    max-width: 280px;
+  }
+
+  .hero-proof {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .hero-proof span + span {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .nav-container {
+    height: 60px;
+    min-height: 60px;
+    padding: 6px 14px;
+  }
+
+  .brand-logo img,
+  .brand-logo .logo-img {
+    height: 44px;
+    max-width: 125px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 20px;
+  }
+
+  .nav-links {
+    top: 60px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .nav-links a {
+    min-height: 44px;
+    font-size: 11.5px;
+  }
+
+  .hero h1 {
+    font-size: 31px;
+  }
+}
+

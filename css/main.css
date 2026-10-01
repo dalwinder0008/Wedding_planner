@@ -39,161 +39,66 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-/* HEADER & NAVIGATION */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(250, 247, 242, 0.98);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
+/* Navigation Alignment & Logo Size Fix */
 .nav-container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 20px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 24px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Logo aur Nav links ko paas laane ke liye */
   align-items: center;
+  gap: 36px; /* Logo aur nav menu ke beech ka gap */
   position: relative;
 }
 
 .brand-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  font-family: 'Montserrat', sans-serif;
-  color: var(--primary-color);
-}
-
-.brand-mark {
-  width: 37px;
-  height: 37px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.brand-copy {
   display: flex;
-  flex-direction: column;
-  line-height: 1;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.brand-copy strong {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 2.4px;
+/* Perfect Logo Size Range (45px - 50px) */
+.logo-img {
+  height: 48px; 
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
-.brand-copy small {
-  margin-top: 5px;
-  color: var(--gold);
-  font-size: 8px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 22px;
+  gap: 20px;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.nav-links a {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+/* Admin Button ko right-side par push karne ke liye */
+.nav-links li:last-child {
+  margin-left: auto;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--primary-color, #333);
+  font-size: 13px;
   font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--gold);
+.nav-item:hover {
+  color: var(--gold, #c59d5f);
 }
-
-.admin-nav-link {
-  color: #666;
-  border: 1px solid #ddd;
-  padding: 5px 12px;
-  border-radius: 3px;
-}
-
-.admin-nav-link:hover {
-  background-color: #333;
-  color: #fff !important;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 6px;
-  z-index: 1001;
-}
-
-/* Mobile Nav Drawer */
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(250, 247, 242, 0.99);
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.35s ease-in-out;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  }
-
-  .nav-links.active {
-    max-height: 500px;
-    opacity: 1;
-    visibility: visible;
-    padding: 20px 0;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 14px 20px;
-    font-size: 13px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-  }
-
-  .admin-nav-link {
-    display: inline-block !important;
-    margin-top: 10px;
-    width: auto;
-  }
-}
-
 /* HERO */
 .hero {
   position: relative;

@@ -10,9 +10,9 @@ const StorageModule = (() => {
   const defaultSettings = {
     heroTitle: "Your once-in-a-lifetime celebration, beautifully planned.",
     heroSubtitle: "From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.",
-    phone: "+91 98887 13224",
-    whatsapp: "919888713224",
-    email: "dalwinderkarnawal1322@gmail.com",
+    phone: "+91 8837531768",
+    whatsapp: "918837531768",
+    email: "Ashish73409@gmail.com",
     socialHandle: "@grandeventsindia"
   };
 

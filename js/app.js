@@ -14,7 +14,7 @@ const AppRouter = (() => {
     document.getElementById('footerHandle').innerText = settings.socialHandle;
 
     document.getElementById('floatingPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
-    document.getElementById('floatingWhatsapp').href = `https://wa.me/${settings.whatsapp}?text=Hey,%20I%20am%20looking%20for%20wedding%20services.`;
+    document.getElementById('floatingWhatsapp').href = `https://wa.me/${settings.whatsapp}?text=Hey,%20I%20am%20looking%20for%20Event%20services.`;
   }
 
   function initMobileMenu() {
