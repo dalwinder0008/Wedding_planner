@@ -49,7 +49,7 @@ header {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   min-height: 76px;
   padding: 5px 24px;
@@ -109,36 +109,43 @@ header {
 nav {
   display: flex;
   align-items: center;
-  width: 100%;
+  flex: 1;
+  min-height: 60px;
+  padding: 0 18px;
+  background: #fff;
+  border: 1px solid rgba(69, 45, 59, 0.1);
+  border-radius: 999px;
+  box-shadow: 0 1px 0 rgba(45, 32, 39, 0.16);
 }
 
 .nav-links {
+  position: relative;
   display: flex;
   list-style: none;
-  gap: 18px;
+  gap: clamp(10px, 1.4vw, 24px);
   align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-/* Admin Button ko right-side par push karne ke liye */
 .nav-links li:last-child {
-  margin-left: auto;
+  position: absolute;
+  right: 0;
 }
 
 .nav-item {
   text-decoration: none;
-  color: var(--primary-color, #333);
-  font-size: 12px;
+  color: #b32c3e;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
+  letter-spacing: 0.2px;
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
-  color: var(--gold, #c59d5f);
+  color: var(--plum);
 }
 
 .admin-nav-link {
@@ -153,6 +160,27 @@ nav {
 .admin-nav-link:hover {
   border-color: var(--gold);
   background: #fff;
+}
+
+.contact-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #e72b16;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact-nav-link:hover {
+  background: #c52534;
+  color: #fff;
 }
 
 .menu-toggle {
@@ -264,29 +292,143 @@ nav {
 
 /* FOOTER */
 footer {
-  background-color: #f6f2ec;
-  padding: 60px 20px;
-  border-top: 1px solid #e5ded4;
+  background: var(--plum);
+  color: #f8f3ed;
+  padding: 52px 24px 20px;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .footer-grid {
-  max-width: 1100px;
-  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  gap: 30px;
+  grid-template-columns: 1.2fr 0.8fr 1.2fr 0.8fr;
+  gap: 36px;
 }
 
 .footer-col h4 {
-  font-size: 18px;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
+  color: #e6c99f;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  margin-bottom: 16px;
 }
 
-.footer-col p, .footer-col a {
+.footer-col p,
+.footer-col a {
   font-size: 13px;
-  color: #666;
+  color: rgba(248, 243, 237, 0.76);
+}
+
+.footer-brand {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #fff !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px !important;
+  line-height: 1;
+}
+
+.footer-intro p {
+  max-width: 220px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 9px;
+  list-style: none;
+}
+
+.footer-links a,
+.footer-handle,
+.footer-policy summary,
+.footer-policy-content a {
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-handle:hover,
+.footer-policy summary:hover,
+.footer-policy-content a:hover {
+  color: #e6c99f;
+}
+
+.footer-contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.footer-contact-links i {
+  width: 15px;
+  color: #e6c99f;
+  text-align: center;
+}
+
+.footer-handle {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 9px;
+}
+
+.footer-social a {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(248, 243, 237, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.footer-social a:hover {
+  border-color: #e6c99f;
+  background: #e6c99f;
+  color: var(--plum);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  margin-top: 38px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(248, 243, 237, 0.18);
+  color: rgba(248, 243, 237, 0.62);
+  font-size: 11px;
+}
+
+.footer-policy {
+  flex: 1 0 100%;
+}
+
+.footer-policy summary {
+  width: fit-content;
+  color: rgba(248, 243, 237, 0.82);
+  cursor: pointer;
+}
+
+.footer-policy-content {
+  display: grid;
+  gap: 8px;
+  max-width: 780px;
+  padding: 14px 0 2px;
+  color: rgba(248, 243, 237, 0.76);
+  font-size: 12px;
+}
+
+.footer-policy-content a {
+  color: #e6c99f;
 }
 
 @media (max-width: 768px) {
@@ -298,16 +440,19 @@ footer {
     left: 18px;
     right: 18px;
     width: auto;
+    min-height: 0;
     padding: 8px;
     background: #fff;
     border: 1px solid var(--border-gray);
+    border-radius: 8px;
     box-shadow: 0 14px 28px rgba(45, 32, 39, 0.12);
   }
   .nav-container.menu-open nav { display: block; }
   .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
-  .nav-links li:last-child { margin-left: 0; }
+  .nav-links li:last-child { position: static; }
   .nav-item { display: flex; padding: 12px; }
   .admin-nav-link { border: 0; }
+  .contact-nav-link { justify-content: center; margin: 8px 12px; padding: 0 16px; }
   .menu-toggle { display: grid; margin-left: auto; }
   .hero { min-height: 650px; padding: 30px 22px; }
   .hero-eyebrow { font-size: 9px; letter-spacing: 2px; line-height: 1.8; }
@@ -316,5 +461,10 @@ footer {
   .hero-btn-group { width: 100%; flex-direction: column; max-width: 280px; }
   .hero-proof { width: 100%; flex-direction: column; gap: 10px; margin-top: 30px; }
   .hero-proof span + span { padding-left: 0; border-left: 0; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+}
+
+@media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { align-items: flex-start; }
 }

@@ -13,7 +13,12 @@ const StorageModule = (() => {
     phone: "+91 8837531768",
     whatsapp: "918837531768",
     email: "Ashish73409@gmail.com",
-    socialHandle: "@grandeventsindia"
+    socialHandle: "@grandeventsindia",
+    estimatorRates: {
+      perGuest: { wedding: 1200, prewedding: 800, birthday: 500 },
+      fixedCost: { decor: 45000, photo: 35000, dj: 25000, coordination: 20000 },
+      highRangePercent: 25
+    }
   };
 
   const defaultBirthdayServices = [
@@ -86,8 +91,24 @@ const StorageModule = (() => {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
+  function getSettings() {
+    const settings = get(KEYS.SETTINGS, {});
+    const estimatorRates = settings.estimatorRates || {};
+
+    return {
+      ...defaultSettings,
+      ...settings,
+      estimatorRates: {
+        ...defaultSettings.estimatorRates,
+        ...estimatorRates,
+        perGuest: { ...defaultSettings.estimatorRates.perGuest, ...(estimatorRates.perGuest || {}) },
+        fixedCost: { ...defaultSettings.estimatorRates.fixedCost, ...(estimatorRates.fixedCost || {}) }
+      }
+    };
+  }
+
   return {
-    getSettings: () => get(KEYS.SETTINGS, defaultSettings),
+    getSettings,
     saveSettings: (settings) => set(KEYS.SETTINGS, settings),
 
     getBirthdayServices: () => get(KEYS.BIRTHDAY_SERVICES, defaultBirthdayServices),

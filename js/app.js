@@ -12,6 +12,13 @@ const AppRouter = (() => {
     document.getElementById('footerPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
 
     document.getElementById('footerHandle').innerText = settings.socialHandle;
+    const socialHandle = encodeURIComponent(settings.socialHandle.trim().replace(/^@/, ''));
+    document.getElementById('footerHandle').href = `https://www.instagram.com/${socialHandle}/`;
+    document.getElementById('footerFacebook').href = `https://www.facebook.com/${socialHandle}`;
+    document.getElementById('footerInstagram').href = `https://www.instagram.com/${socialHandle}/`;
+    document.getElementById('footerThreads').href = `https://www.threads.net/@${socialHandle}`;
+    document.getElementById('footerWhatsapp').href = `https://wa.me/${settings.whatsapp}`;
+    document.getElementById('footerYear').innerText = new Date().getFullYear();
 
     document.getElementById('floatingPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
     document.getElementById('floatingWhatsapp').href = `https://wa.me/${settings.whatsapp}?text=Hey,%20I%20am%20looking%20for%20Event%20services.`;

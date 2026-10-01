@@ -2,21 +2,18 @@ const EstimatorModule = (() => {
   function calculate() {
     const eventType = document.getElementById('calcEventType').value;
     const guests = parseInt(document.getElementById('guestCount').value);
-    
-    let baseRate = 0;
-    if (eventType === 'wedding') baseRate = 1200;
-    else if (eventType === 'prewedding') baseRate = 800;
-    else if (eventType === 'birthday') baseRate = 500;
+    const rates = StorageModule.getSettings().estimatorRates;
+    const baseRate = rates.perGuest[eventType];
 
     let multiplier = 0;
-    if (document.getElementById('srvDecor').checked) multiplier += 45000;
+    if (document.getElementById('srvDecor').checked) multiplier += rates.fixedCost.decor;
     if (document.getElementById('srvCatering').checked) multiplier += guests * baseRate;
-    if (document.getElementById('srvPhoto').checked) multiplier += 35000;
-    if (document.getElementById('srvDj').checked) multiplier += 25000;
-    if (document.getElementById('srvCoordination').checked) multiplier += 20000;
+    if (document.getElementById('srvPhoto').checked) multiplier += rates.fixedCost.photo;
+    if (document.getElementById('srvDj').checked) multiplier += rates.fixedCost.dj;
+    if (document.getElementById('srvCoordination').checked) multiplier += rates.fixedCost.coordination;
 
     const min = Math.round(multiplier);
-    const max = Math.round(multiplier * 1.25);
+    const max = Math.round(multiplier * (1 + rates.highRangePercent / 100));
     const formatted = `₹ ${min.toLocaleString('en-IN')} - ₹ ${max.toLocaleString('en-IN')}`;
 
     document.getElementById('estimatedPriceDisplay').innerText = formatted;
@@ -48,5 +45,5 @@ const EstimatorModule = (() => {
     calculate();
   }
 
-  return { init };
+  return { init, refresh: calculate };
 })();

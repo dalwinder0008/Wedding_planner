@@ -40,8 +40,8 @@
             <li><a href="#estimator" class="nav-item">Estimator</a></li>
             <li><a href="#gallery" class="nav-item">Portfolio</a></li>
             <li><a href="#reviews" class="nav-item">Reviews</a></li>
-            <li><a href="#contact" class="nav-item">Contact</a></li>
             <li><a href="#admin" class="admin-nav-link nav-item"><i class="fa fa-lock" aria-hidden="true"></i> Admin</a></li>
+            <li><a href="#contact" class="contact-nav-link nav-item">Contact Us</a></li>
           </ul>
         </nav>
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
@@ -192,7 +192,7 @@
               <input type="tel" id="clientNumber" placeholder="NUMBER" required>
             </div>
             <div class="form-group">
-              <input type="text" id="weddingDate" placeholder="WEDDING DATE" onfocus="(this.type='date')" onblur="(this.type='text')">
+              <input type="text" id="EventDate" placeholder="Event DATE" onfocus="(this.type='date')" onblur="(this.type='text')">
             </div>
             <div class="form-group">
               <input type="text" id="moreInfo" placeholder="MORE INFO">
@@ -205,18 +205,52 @@
 
     <!-- FOOTER -->
     <footer>
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4 class="serif-font">EMAIL</h4>
-          <p><a href="mailto:Ashish73409@gmail.com" id="footerEmail">Ashish73409@gmail.com</a></p>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-col footer-intro">
+            <a href="#home" class="footer-brand">Wedhappy.in</a>
+            <p>Thoughtfully planned celebrations, made personal.</p>
+          </div>
+          <div class="footer-col">
+            <h4 class="serif-font">EXPLORE</h4>
+            <ul class="footer-links">
+              <li><a href="#wedding-planner">Weddings</a></li>
+              <li><a href="#birthday-planner">Birthdays</a></li>
+              <li><a href="#estimator">Budget Estimator</a></li>
+              <li><a href="#gallery">Portfolio</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="serif-font">GET IN TOUCH</h4>
+            <ul class="footer-links footer-contact-links">
+              <li><a href="mailto:Ashish73409@gmail.com" id="footerEmail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Ashish73409@gmail.com</a></li>
+              <li><a href="tel:+918837531768" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88375 31768</a></li>
+              <li><a href="https://wa.me/918837531768" id="footerWhatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="serif-font">FOLLOW ALONG</h4>
+            <a href="https://www.instagram.com/grandeventsindia/" class="footer-handle" id="footerHandle" target="_blank" rel="noopener noreferrer">@grandeventsindia</a>
+            <div class="footer-social" aria-label="Social media links">
+              <a href="https://www.facebook.com/grandeventsindia" id="footerFacebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/grandeventsindia/" id="footerInstagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.threads.net/@grandeventsindia" id="footerThreads" target="_blank" rel="noopener noreferrer" aria-label="Threads" title="Threads"><i class="fa-solid fa-at" aria-hidden="true"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4 class="serif-font">CALL US</h4>
-          <p><a href="tel:+918837531768" id="footerPhone">+91 88375 31768</a></p>
-        </div>
-        <div class="footer-col">
-          <h4 class="serif-font">FOLLOW</h4>
-          <p><a href="#" id="footerHandle">@grandeventsindia</a></p>
+
+        <div class="footer-bottom">
+          <span>&copy; <span id="footerYear"></span> Wedhappy.in. All rights reserved.</span>
+          <details class="footer-policy" id="privacy-policy">
+            <summary>Privacy Policy</summary>
+            <div class="footer-policy-content">
+              <p>Inquiry details and reviews submitted on this site are saved in this browser on this device. They are not sent to a website server by this site.</p>
+              <p>When you submit an inquiry, WhatsApp opens with the details you entered so you can choose whether to send them. WhatsApp handles any information you share there under its own privacy policy.</p>
+              <p>Reviews include the name, city, rating, and comment you provide, and are shown on this site in this browser. Avoid entering sensitive personal information.</p>
+              <p>To remove locally saved information, clear this site's data in your browser settings. For questions, contact <a href="mailto:Ashish73409@gmail.com">Ashish73409@gmail.com</a>.</p>
+            </div>
+          </details>
         </div>
       </div>
     </footer>
@@ -383,6 +417,43 @@
             <div class="admin-form-group">
               <label for="editSocialHandle">Social Media Handle (Footer)</label>
               <input type="text" id="editSocialHandle" required>
+            </div>
+            <div class="admin-rate-settings">
+              <h4>Estimator Budget Rates (INR)</h4>
+              <div class="admin-rate-grid">
+                <div class="admin-form-group">
+                  <label for="estimatorWeddingRate">Wedding per guest</label>
+                  <input type="number" id="estimatorWeddingRate" min="0" step="100" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorPreweddingRate">Pre-wedding per guest</label>
+                  <input type="number" id="estimatorPreweddingRate" min="0" step="100" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorBirthdayRate">Birthday per guest</label>
+                  <input type="number" id="estimatorBirthdayRate" min="0" step="100" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorDecorCost">Decor &amp; lighting</label>
+                  <input type="number" id="estimatorDecorCost" min="0" step="1000" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorPhotoCost">Photography &amp; video</label>
+                  <input type="number" id="estimatorPhotoCost" min="0" step="1000" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorDjCost">DJ &amp; production</label>
+                  <input type="number" id="estimatorDjCost" min="0" step="1000" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorCoordinationCost">On-day coordination</label>
+                  <input type="number" id="estimatorCoordinationCost" min="0" step="1000" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorRangePercent">Upper estimate margin (%)</label>
+                  <input type="number" id="estimatorRangePercent" min="0" max="300" step="1" required>
+                </div>
+              </div>
             </div>
             <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Save Website & Footer Changes</button>
           </form>

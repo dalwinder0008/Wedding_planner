@@ -38,6 +38,14 @@ const AdminModule = (() => {
     document.getElementById('editWhatsapp').value = settings.whatsapp;
     document.getElementById('editEmail').value = settings.email;
     document.getElementById('editSocialHandle').value = settings.socialHandle;
+    document.getElementById('estimatorWeddingRate').value = settings.estimatorRates.perGuest.wedding;
+    document.getElementById('estimatorPreweddingRate').value = settings.estimatorRates.perGuest.prewedding;
+    document.getElementById('estimatorBirthdayRate').value = settings.estimatorRates.perGuest.birthday;
+    document.getElementById('estimatorDecorCost').value = settings.estimatorRates.fixedCost.decor;
+    document.getElementById('estimatorPhotoCost').value = settings.estimatorRates.fixedCost.photo;
+    document.getElementById('estimatorDjCost').value = settings.estimatorRates.fixedCost.dj;
+    document.getElementById('estimatorCoordinationCost').value = settings.estimatorRates.fixedCost.coordination;
+    document.getElementById('estimatorRangePercent').value = settings.estimatorRates.highRangePercent;
 
     renderAdminGallery();
     renderAdminBirthdays();
@@ -219,11 +227,26 @@ const AdminModule = (() => {
         phone: document.getElementById('editPhone').value,
         whatsapp: document.getElementById('editWhatsapp').value,
         email: document.getElementById('editEmail').value,
-        socialHandle: document.getElementById('editSocialHandle').value
+        socialHandle: document.getElementById('editSocialHandle').value,
+        estimatorRates: {
+          perGuest: {
+            wedding: Number(document.getElementById('estimatorWeddingRate').value),
+            prewedding: Number(document.getElementById('estimatorPreweddingRate').value),
+            birthday: Number(document.getElementById('estimatorBirthdayRate').value)
+          },
+          fixedCost: {
+            decor: Number(document.getElementById('estimatorDecorCost').value),
+            photo: Number(document.getElementById('estimatorPhotoCost').value),
+            dj: Number(document.getElementById('estimatorDjCost').value),
+            coordination: Number(document.getElementById('estimatorCoordinationCost').value)
+          },
+          highRangePercent: Number(document.getElementById('estimatorRangePercent').value)
+        }
       };
 
       StorageModule.saveSettings(updated);
       AppRouter.applySettings();
+      EstimatorModule.refresh();
       alert('Settings updated successfully!');
     });
   }
