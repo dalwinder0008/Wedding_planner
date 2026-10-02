@@ -59,8 +59,8 @@ The project uses a clean, modular frontend architecture without heavy frameworks
 To access the control panel:
 1. Navigate to `index.html#admin` or click the **Admin** link in the navigation header.
 2. Login with default credentials:
-   - **Username**: `Admin@1`
-   - **Password**: `Admin@1`
+   - **Username**: `Admin`
+   - **Password**: `Admin`
 
 *(Note: Content changes are stored locally in the browser's `localStorage` for instant testing and demonstration.)*
 
