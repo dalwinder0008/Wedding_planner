@@ -5,8 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WedHappy | Wedding Planner & Event Management</title>
   <meta name="description" content="Plan your dream wedding with WedHappy. Explore wedding planning, birthday celebrations, event decoration, and budget estimation services.">
+  <meta name="keywords" content="wedding planner, event management, birthday party planner, wedding decor, catering services, event budget estimator, WedHappy, luxury wedding planner India">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://wedhappy.in/">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EventPlanner",
+    "name": "WedHappy",
+    "url": "https://wedhappy.in/",
+    "logo": "https://wedhappy.in/public/bg-l.png",
+    "image": "https://wedhappy.in/public/bg-l.png",
+    "description": "WedHappy is a premier wedding planning and event management agency in India, specializing in luxury weddings, birthday party planning, theme decor, catering, photography, and event budget estimation.",
+    "telephone": "+91-8837531768",
+    "email": "Ashish73409@gmail.com",
+    "priceRange": "₹₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.instagram.com/grandeventsindia/",
+      "https://www.facebook.com/grandeventsindia",
+      "https://www.threads.net/@grandeventsindia"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Event Management & Planning Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wedding Planning Services",
+            "description": "Comprehensive luxury wedding arrangements tailored to your sacred rituals and celebration style."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Birthday Party Planning",
+            "description": "Whimsical themes, captivating entertainment, and seamless event execution for birthdays."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Event Budget Estimator",
+            "description": "Instant online budget estimation for weddings, pre-wedding functions, and birthday celebrations."
+          }
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
@@ -211,7 +267,7 @@
               <input type="tel" id="clientNumber" placeholder="NUMBER" required>
             </div>
             <div class="form-group">
-              <input type="text" id="EventDate" placeholder="Event DATE" onfocus="(this.type='date')" onblur="(this.type='text')">
+              <input type="text" id="weddingDate" placeholder="Event DATE" onfocus="(this.type='date')" onblur="(this.type='text')">
             </div>
             <div class="form-group">
               <input type="text" id="moreInfo" placeholder="MORE INFO">
