@@ -80,6 +80,7 @@
   <meta name="twitter:image" content="https://wedhappy.in/public/new-logo.png">
 
   <link rel="icon" type="image/png" href="public/bg-l.png">
+  <link rel="preload" as="image" href="public/hero%20section.avif" fetchpriority="high">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,13 +233,13 @@
 
       <div class="add-review-wrapper">
         <h3 class="serif-font" style="text-align: center; margin-bottom: 12px; font-size: 24px;">Leave Your Review</h3>
-        <p style="text-align:center; font-size: 13px; color: #777; margin-bottom: 25px;">Your genuine feedback means the world to us!</p>
+        <p style="text-align:center; font-size: 13px; color: #555; margin-bottom: 25px;">Your genuine feedback means the world to us!</p>
         
         <form id="userReviewForm">
           <div class="review-form-grid">
             <input type="text" id="reviewAuthor" placeholder="Your Full Name" required>
             <input type="text" id="reviewCity" placeholder="City / Event (e.g., Delhi Wedding)" required>
-            <select id="reviewRating" required>
+            <select id="reviewRating" aria-label="Rating Stars" required>
               <option value="5">⭐⭐⭐⭐⭐ (5 Stars - Exceptional)</option>
               <option value="4">⭐⭐⭐⭐ (4 Stars - Great)</option>
               <option value="3">⭐⭐⭐ (3 Stars - Good)</option>
@@ -285,7 +286,7 @@
             <p>Thoughtfully planned celebrations, made personal.</p>
           </div>
           <div class="footer-col">
-            <h4 class="serif-font">EXPLORE</h4>
+            <h3 class="serif-font">EXPLORE</h3>
             <ul class="footer-links">
               <li><a href="#wedding-planner">Weddings</a></li>
               <li><a href="#birthday-planner">Birthdays</a></li>
@@ -295,7 +296,7 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4 class="serif-font">GET IN TOUCH</h4>
+            <h3 class="serif-font">GET IN TOUCH</h3>
             <ul class="footer-links footer-contact-links">
               <li><a href="mailto:Ashish73409@gmail.com" id="footerEmail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Ashish73409@gmail.com</a></li>
               <li><a href="tel:+918837531768" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88375 31768</a></li>
@@ -303,7 +304,7 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4 class="serif-font">FOLLOW ALONG</h4>
+            <h3 class="serif-font">FOLLOW ALONG</h3>
             <a href="https://www.instagram.com/grandeventsindia/" class="footer-handle" id="footerHandle" target="_blank" rel="noopener noreferrer">@grandeventsindia</a>
             <div class="footer-social" aria-label="Social media links">
               <a href="https://www.facebook.com/grandeventsindia" id="footerFacebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
@@ -357,7 +358,7 @@
     <div id="adminLoginScreen" class="admin-login-box">
       <div class="admin-card">
         <h2 class="serif-font" style="margin-bottom: 8px;">Admin Portal Login</h2>
-        <p style="font-size: 13px; color: #777; margin-bottom: 25px;">Enter credentials to manage images, services, and content</p>
+        <p style="font-size: 13px; color: #555; margin-bottom: 25px;">Enter credentials to manage images, services, and content</p>
         <form id="adminLoginForm">
           <div class="admin-form-group">
             <label for="adminUser">Username</label>
