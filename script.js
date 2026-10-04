@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     email: "Ashish73409@gmail.com",
 
-    socialHandle: "@grandeventsindia"
+    socialHandle: "@wedhappy.in"
 
   };
 

@@ -200,8 +200,7 @@ nav {
 /* HERO */
 .hero {
   position: relative;
-  height: 85vh;
-  min-height: 680px;
+  min-height: calc(100vh - 76px);
   background: linear-gradient(110deg, rgba(35, 20, 29, 0.78), rgba(35, 20, 29, 0.28) 62%, rgba(0,0,0,0.5)), 
               url('../public/hero%20section.avif') center/cover no-repeat;
   display: flex;
@@ -210,7 +209,7 @@ nav {
   align-items: center;
   text-align: center;
   color: #fff;
-  padding: 20px;
+  padding: 100px 24px 60px;
 }
 
 .hero::after {
@@ -455,12 +454,16 @@ footer {
   .admin-nav-link { border: 0; }
   .contact-nav-link { justify-content: center; margin: 8px 12px; padding: 0 16px; }
   .menu-toggle { display: grid; margin-left: auto; }
-  .hero { min-height: 650px; padding: 30px 22px; }
-  .hero-eyebrow { font-size: 9px; letter-spacing: 2px; line-height: 1.8; }
-  .hero h1 { font-size: 38px; }
-  .hero p { font-size: 15px; }
+  .hero {
+    height: auto;
+    min-height: auto;
+    padding: 110px 20px 60px 20px;
+  }
+  .hero-eyebrow { font-size: 9.5px; letter-spacing: 2px; line-height: 1.8; margin-bottom: 16px; }
+  .hero h1 { font-size: 34px; margin-bottom: 14px; }
+  .hero p { font-size: 15px; margin-bottom: 24px; }
   .hero-btn-group { width: 100%; flex-direction: column; max-width: 280px; }
-  .hero-proof { width: 100%; flex-direction: column; gap: 10px; margin-top: 30px; }
+  .hero-proof { width: 100%; flex-direction: column; gap: 12px; margin-top: 32px; padding-top: 20px; }
   .hero-proof span + span { padding-left: 0; border-left: 0; }
   .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
 }
