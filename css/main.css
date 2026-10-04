@@ -8,8 +8,8 @@
   --btn-hover: #684852;
   --whatsapp-green: #25D366;
   --call-black: #222222;
-  --gold: #c19052;
-  --rose: #c97877;
+  --gold: #b37f3b;
+  --rose: #a84b4d;
   --plum: #452d3b;
 }
 
@@ -169,7 +169,7 @@ nav {
   min-height: 40px;
   padding: 0 22px;
   border-radius: 999px;
-  background: #e72b16;
+  background: #b82412;
   color: #fff;
   font-size: 12px;
   font-weight: 600;
@@ -308,10 +308,10 @@ footer {
   gap: 36px;
 }
 
-.footer-col h4 {
+.footer-col h3 {
   color: #e6c99f;
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.4px;
   margin-bottom: 16px;
@@ -446,6 +446,7 @@ footer {
     border: 1px solid var(--border-gray);
     border-radius: 8px;
     box-shadow: 0 14px 28px rgba(45, 32, 39, 0.12);
+    z-index: 1001;
   }
   .nav-container.menu-open nav { display: block; }
   .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
