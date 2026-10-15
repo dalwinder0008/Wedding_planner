@@ -57,9 +57,13 @@ const StorageModule = (() => {
     { id: 5, category: "birthday", url: "public/Brthday/concept,themeand%20decoration.jpg" },
     { id: 6, category: "wedding", url: "public/shooting.jpg" },
     { id: 7, category: "wedding", url: "public/foodandketringt.jpg" },
-    { id: 8, category: "honeymoon", url: "public/honeymoon-1.jpg" },
-    { id: 9, category: "honeymoon", url: "public/honeymoon-2.jpg" },
-    { id: 10, category: "honeymoon", url: "public/honeymoon-3.jpg" }
+    { id: 8, category: "honeymoon", url: "public/honeymoon-candlelight-dinner.jpg" },
+    { id: 9, category: "honeymoon", url: "public/honeymoon-boat-night.jpg" },
+    { id: 10, category: "honeymoon", url: "public/honeymoon-romantic-dinner.jpg" },
+    { id: 11, category: "honeymoon", url: "public/honeymoon-gondola-ride.jpg" },
+    { id: 12, category: "honeymoon", url: "public/honeymoon-1.jpg" },
+    { id: 13, category: "honeymoon", url: "public/honeymoon-2.jpg" },
+    { id: 14, category: "honeymoon", url: "public/honeymoon-3.jpg" }
   ];
 
   const defaultReviews = [
@@ -141,7 +145,14 @@ const StorageModule = (() => {
     getBirthdayServices: () => get(KEYS.BIRTHDAY_SERVICES, defaultBirthdayServices),
     saveBirthdayServices: (services) => set(KEYS.BIRTHDAY_SERVICES, services),
 
-    getGallery: () => get(KEYS.GALLERY, defaultGallery),
+    getGallery: () => {
+      const stored = get(KEYS.GALLERY, null);
+      if (!stored || stored.length < defaultGallery.length || stored.some(g => g.url && g.url.startsWith('http'))) {
+        set(KEYS.GALLERY, defaultGallery);
+        return defaultGallery;
+      }
+      return stored;
+    },
     saveGallery: (gallery) => set(KEYS.GALLERY, gallery),
 
     getReviews: () => get(KEYS.REVIEWS, defaultReviews),
