@@ -37,6 +37,39 @@ const ServicesModule = (() => {
     }
   ];
 
+  const honeymoonServices = [
+    {
+      title: "Exotic International Getaways",
+      shortDesc: "Maldives overwater villas, Bali pool sanctuaries, Santorini sunset suites, Paris romance, and Swiss Alpine hideaways.",
+      detailedDesc: "All-inclusive international honeymoon packages: luxury 5-star beachfront resorts, private infinity pools, express visa coordination, airport transfers, and sunset catamaran cruises."
+    },
+    {
+      title: "Royal Palaces & Hill Retreats",
+      shortDesc: "Heritage palace suites in Udaipur & Jaipur, luxury houseboats on Dal Lake Kashmir, and cozy private chalets in Manali.",
+      detailedDesc: "Experience regal hospitality with heritage palace stays, private shikara rides, tea-estate luxury bungalows, couple spa sessions, and private stargazing bonfires."
+    },
+    {
+      title: "Candlelight Dinners & Surprises",
+      shortDesc: "Private beach gazebo dining, twilight yacht dinners, floral bed cabana styling, and customized romantic anniversary surprises.",
+      detailedDesc: "Intimate dining experiences with private chefs, vintage wine, live acoustic musicians, floral path lighting, and bespoke gift hampers designed just for couples."
+    },
+    {
+      title: "Couple Shoots & Cinematic Reels",
+      shortDesc: "Destination couple portraits, 4K aerial drone coverage, curated Instagram reels, and timeless fine-art photo albums.",
+      detailedDesc: "Top travel and fashion photographers to document your romantic journey. Includes scenic location scouting, drone shots, same-trip edited reels, and high-res digital albums."
+    },
+    {
+      title: "Adventure & Island Glamping",
+      shortDesc: "Scuba diving in coral lagoons, private desert glamping in Jaisalmer, Northern Lights glass igloos, and scenic helicopter tours.",
+      detailedDesc: "Curated itineraries for thrill-loving couples: certified scuba diving, private dunes camping with cultural folk music, waterfall trekking, and scenic couple flights."
+    },
+    {
+      title: "Honeymoon Travel Concierge",
+      shortDesc: "End-to-end trip curation, priority bookings, surprise room turn-downs, and 24/7 dedicated on-call travel support.",
+      detailedDesc: "Seamless honeymoon planning: customized daily itineraries, luxury flight & stay bookings, surprise champagne & chocolate room decor, and round-the-clock emergency support."
+    }
+  ];
+
   const serviceIcons = {
     "Decor & Theme Styling": "fa-palette",
     "Grand Entries & Effects": "fa-wand-magic-sparkles",
@@ -44,7 +77,13 @@ const ServicesModule = (() => {
     "Photography & Cinematic Film": "fa-camera-retro",
     "Bridal Makeup & Mehendi": "fa-hand-sparkles",
     "DJ, Sound & Baraat Procession": "fa-music",
-    "Day-of Coordination": "fa-calendar-check"
+    "Day-of Coordination": "fa-calendar-check",
+    "Exotic International Getaways": "fa-plane-departure",
+    "Royal Palaces & Hill Retreats": "fa-landmark",
+    "Candlelight Dinners & Surprises": "fa-champagne-glasses",
+    "Couple Shoots & Cinematic Reels": "fa-camera-retro",
+    "Adventure & Island Glamping": "fa-compass",
+    "Honeymoon Travel Concierge": "fa-heart"
   };
 
   function renderWeddings() {
@@ -98,6 +137,31 @@ const ServicesModule = (() => {
     });
   }
 
+  function renderHoneymoons() {
+    const grid = document.getElementById('honeymoonServicesGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    honeymoonServices.forEach((s, idx) => {
+      const card = document.createElement('div');
+      card.className = 'service-card';
+      card.innerHTML = `
+        <div class="service-card-top">
+          <span class="service-icon"><i class="fa ${serviceIcons[s.title] || 'fa-heart'}"></i></span>
+          <span class="service-number">0${idx + 1}</span>
+        </div>
+        <div>
+          <h3>${StorageModule.escapeHtml(s.title)}</h3>
+          <p>${StorageModule.escapeHtml(s.shortDesc)}</p>
+        </div>
+        <button class="open-modal-btn" onclick="ServicesModule.openModal('${StorageModule.escapeHtml(s.title)}', '${StorageModule.escapeHtml(s.detailedDesc)}')">
+          View Service Details <i class="fa fa-arrow-right"></i>
+        </button>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
   function openModal(title, description) {
     const modal = document.getElementById('serviceModal');
     const settings = StorageModule.getSettings();
@@ -127,9 +191,11 @@ const ServicesModule = (() => {
     init: () => {
       renderWeddings();
       renderBirthdays();
+      renderHoneymoons();
       initModalEvents();
     },
     renderBirthdays,
+    renderHoneymoons,
     openModal
   };
 })();

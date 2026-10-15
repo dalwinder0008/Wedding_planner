@@ -10,12 +10,13 @@ const StorageModule = (() => {
   const defaultSettings = {
     heroTitle: "Your once-in-a-lifetime celebration, beautifully planned.",
     heroSubtitle: "From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.",
-    phone: "+91 8837531768",
+    phone: "+91 88473 86897",
+    phone2: "+91 88375 31768",
     whatsapp: "918837531768",
-    email: "Ashish73409@gmail.com",
+    email: "wedhappyofficial@gmail.com",
     socialHandle: "@wedhappy.in",
     estimatorRates: {
-      perGuest: { wedding: 1200, prewedding: 800, birthday: 500 },
+      perGuest: { wedding: 1200, prewedding: 800, birthday: 500, honeymoon: 2500 },
       fixedCost: { decor: 45000, photo: 35000, dj: 25000, coordination: 20000 },
       highRangePercent: 25
     }
@@ -55,7 +56,14 @@ const StorageModule = (() => {
     { id: 4, category: "sangeet", url: "public/dj.webp" },
     { id: 5, category: "birthday", url: "public/Brthday/concept,themeand%20decoration.jpg" },
     { id: 6, category: "wedding", url: "public/shooting.jpg" },
-    { id: 7, category: "wedding", url: "public/foodandketringt.jpg" }
+    { id: 7, category: "wedding", url: "public/foodandketringt.jpg" },
+    { id: 8, category: "honeymoon", url: "public/honeymoon-candlelight-dinner.jpg" },
+    { id: 9, category: "honeymoon", url: "public/honeymoon-boat-night.jpg" },
+    { id: 10, category: "honeymoon", url: "public/honeymoon-romantic-dinner.jpg" },
+    { id: 11, category: "honeymoon", url: "public/honeymoon-gondola-ride.jpg" },
+    { id: 12, category: "honeymoon", url: "public/honeymoon-1.jpg" },
+    { id: 13, category: "honeymoon", url: "public/honeymoon-2.jpg" },
+    { id: 14, category: "honeymoon", url: "public/honeymoon-3.jpg" }
   ];
 
   const defaultReviews = [
@@ -79,6 +87,13 @@ const StorageModule = (() => {
       city: "Ludhiana",
       rating: 5,
       comment: "We booked them for our son's 5th birthday with a Jungle Safari theme. The mascots and interactive games kept the kids thoroughly entertained. A 10/10 service!"
+    },
+    {
+      id: 4,
+      author: "Karan & Tanya",
+      city: "Maldives Honeymoon",
+      rating: 5,
+      comment: "WedHappy planned our dream honeymoon to the Maldives! From the private water villa to the surprise candlelight dinner on the beach, every detail was pure magic. Unforgettable experience!"
     }
   ];
 
@@ -93,6 +108,22 @@ const StorageModule = (() => {
 
   function getSettings() {
     const settings = get(KEYS.SETTINGS, {});
+
+    // Ensure phone numbers and single WhatsApp number are properly aligned
+    settings.phone = defaultSettings.phone; // +91 88473 86897 (Call Only)
+    settings.phone2 = defaultSettings.phone2; // +91 88375 31768 (Call)
+    settings.whatsapp = "918837531768"; // WhatsApp is strictly 8837531768
+    if (!settings.email || settings.email.toLowerCase() === 'ashish73409@gmail.com') {
+      settings.email = defaultSettings.email;
+    }
+    set(KEYS.SETTINGS, settings);
+
+    // Migrate any cached gallery to use local public/ images
+    const gallery = get(KEYS.GALLERY, null);
+    if (gallery && gallery.some(g => g.url && (g.url.includes('unsplash.com') || g.url.startsWith('http')))) {
+      set(KEYS.GALLERY, defaultGallery);
+    }
+
     const estimatorRates = settings.estimatorRates || {};
 
     return {
@@ -114,7 +145,14 @@ const StorageModule = (() => {
     getBirthdayServices: () => get(KEYS.BIRTHDAY_SERVICES, defaultBirthdayServices),
     saveBirthdayServices: (services) => set(KEYS.BIRTHDAY_SERVICES, services),
 
-    getGallery: () => get(KEYS.GALLERY, defaultGallery),
+    getGallery: () => {
+      const stored = get(KEYS.GALLERY, null);
+      if (!stored || stored.length < defaultGallery.length || stored.some(g => g.url && g.url.startsWith('http'))) {
+        set(KEYS.GALLERY, defaultGallery);
+        return defaultGallery;
+      }
+      return stored;
+    },
     saveGallery: (gallery) => set(KEYS.GALLERY, gallery),
 
     getReviews: () => get(KEYS.REVIEWS, defaultReviews),

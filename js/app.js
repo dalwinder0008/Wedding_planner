@@ -5,18 +5,20 @@ const AppRouter = (() => {
     document.getElementById('heroTitle').innerText = settings.heroTitle;
     document.getElementById('heroSubtitle').innerText = settings.heroSubtitle;
 
-    document.getElementById('footerEmail').innerText = settings.email;
+    document.getElementById('footerEmail').innerHTML = `<i class="fa-solid fa-envelope" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.email)}`;
     document.getElementById('footerEmail').href = `mailto:${settings.email}`;
 
-    document.getElementById('footerPhone').innerText = settings.phone;
+    document.getElementById('footerPhone').innerHTML = `<i class="fa-solid fa-phone" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.phone)} <span class="contact-tag">Call Only</span>`;
     document.getElementById('footerPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
 
-    document.getElementById('footerHandle').innerText = settings.socialHandle;
-    const socialHandle = encodeURIComponent(settings.socialHandle.trim().replace(/^@/, ''));
-    document.getElementById('footerHandle').href = `https://www.instagram.com/${socialHandle}/`;
-    document.getElementById('footerFacebook').href = `https://www.facebook.com/${socialHandle}`;
-    document.getElementById('footerInstagram').href = `https://www.instagram.com/${socialHandle}/`;
-    document.getElementById('footerThreads').href = `https://www.threads.net/@${socialHandle}`;
+    const phone2El = document.getElementById('footerPhone2');
+    if (phone2El) {
+      const p2 = settings.phone2 || '+91 88375 31768';
+      phone2El.innerHTML = `<i class="fa-solid fa-phone" aria-hidden="true"></i> ${StorageModule.escapeHtml(p2)} <span class="contact-tag">Call</span>`;
+      phone2El.href = `tel:${p2.replace(/[^0-9+]/g, '')}`;
+    }
+
+    document.getElementById('footerWhatsapp').innerHTML = `<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 88375 31768 <span class="contact-tag-wa">WhatsApp Only</span>`;
     document.getElementById('footerWhatsapp').href = `https://wa.me/${settings.whatsapp}`;
     document.getElementById('footerYear').innerText = new Date().getFullYear();
 

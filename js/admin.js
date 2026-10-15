@@ -35,12 +35,17 @@ const AdminModule = (() => {
     document.getElementById('editHeroTitle').value = settings.heroTitle;
     document.getElementById('editHeroSubtitle').value = settings.heroSubtitle;
     document.getElementById('editPhone').value = settings.phone;
+    if (document.getElementById('editPhone2')) {
+      document.getElementById('editPhone2').value = settings.phone2 || '+91 88375 31768';
+    }
     document.getElementById('editWhatsapp').value = settings.whatsapp;
     document.getElementById('editEmail').value = settings.email;
     document.getElementById('editSocialHandle').value = settings.socialHandle;
     document.getElementById('estimatorWeddingRate').value = settings.estimatorRates.perGuest.wedding;
     document.getElementById('estimatorPreweddingRate').value = settings.estimatorRates.perGuest.prewedding;
     document.getElementById('estimatorBirthdayRate').value = settings.estimatorRates.perGuest.birthday;
+    const honeymoonRateEl = document.getElementById('estimatorHoneymoonRate');
+    if (honeymoonRateEl) honeymoonRateEl.value = settings.estimatorRates.perGuest.honeymoon || 2500;
     document.getElementById('estimatorDecorCost').value = settings.estimatorRates.fixedCost.decor;
     document.getElementById('estimatorPhotoCost').value = settings.estimatorRates.fixedCost.photo;
     document.getElementById('estimatorDjCost').value = settings.estimatorRates.fixedCost.dj;
@@ -225,6 +230,7 @@ const AdminModule = (() => {
         heroTitle: document.getElementById('editHeroTitle').value,
         heroSubtitle: document.getElementById('editHeroSubtitle').value,
         phone: document.getElementById('editPhone').value,
+        phone2: document.getElementById('editPhone2') ? document.getElementById('editPhone2').value : '+91 88375 31768',
         whatsapp: document.getElementById('editWhatsapp').value,
         email: document.getElementById('editEmail').value,
         socialHandle: document.getElementById('editSocialHandle').value,
@@ -232,7 +238,8 @@ const AdminModule = (() => {
           perGuest: {
             wedding: Number(document.getElementById('estimatorWeddingRate').value),
             prewedding: Number(document.getElementById('estimatorPreweddingRate').value),
-            birthday: Number(document.getElementById('estimatorBirthdayRate').value)
+            birthday: Number(document.getElementById('estimatorBirthdayRate').value),
+            honeymoon: Number(document.getElementById('estimatorHoneymoonRate')?.value || 2500)
           },
           fixedCost: {
             decor: Number(document.getElementById('estimatorDecorCost').value),
