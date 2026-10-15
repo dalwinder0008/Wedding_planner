@@ -2,14 +2,23 @@ const AppRouter = (() => {
   function applySettings() {
     const settings = StorageModule.getSettings();
 
-    document.getElementById('heroTitle').innerText = settings.heroTitle;
-    document.getElementById('heroSubtitle').innerText = settings.heroSubtitle;
+    const heroTitleEl = document.getElementById('heroTitle');
+    if (heroTitleEl) heroTitleEl.innerText = settings.heroTitle;
 
-    document.getElementById('footerEmail').innerHTML = `<i class="fa-solid fa-envelope" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.email)}`;
-    document.getElementById('footerEmail').href = `mailto:${settings.email}`;
+    const heroSubtitleEl = document.getElementById('heroSubtitle');
+    if (heroSubtitleEl) heroSubtitleEl.innerText = settings.heroSubtitle;
 
-    document.getElementById('footerPhone').innerHTML = `<i class="fa-solid fa-phone" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.phone)} <span class="contact-tag">Call Only</span>`;
-    document.getElementById('footerPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
+    const footerEmailEl = document.getElementById('footerEmail');
+    if (footerEmailEl) {
+      footerEmailEl.innerHTML = `<i class="fa-solid fa-envelope" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.email)}`;
+      footerEmailEl.href = `mailto:${settings.email}`;
+    }
+
+    const footerPhoneEl = document.getElementById('footerPhone');
+    if (footerPhoneEl) {
+      footerPhoneEl.innerHTML = `<i class="fa-solid fa-phone" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.phone)} <span class="contact-tag">Call Only</span>`;
+      footerPhoneEl.href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
+    }
 
     const phone2El = document.getElementById('footerPhone2');
     if (phone2El) {
@@ -18,12 +27,20 @@ const AppRouter = (() => {
       phone2El.href = `tel:${p2.replace(/[^0-9+]/g, '')}`;
     }
 
-    document.getElementById('footerWhatsapp').innerHTML = `<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 88375 31768 <span class="contact-tag-wa">WhatsApp Only</span>`;
-    document.getElementById('footerWhatsapp').href = `https://wa.me/${settings.whatsapp}`;
-    document.getElementById('footerYear').innerText = new Date().getFullYear();
+    const footerWhatsappEl = document.getElementById('footerWhatsapp');
+    if (footerWhatsappEl) {
+      footerWhatsappEl.innerHTML = `<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 88375 31768 <span class="contact-tag-wa">WhatsApp Only</span>`;
+      footerWhatsappEl.href = `https://wa.me/${settings.whatsapp}`;
+    }
 
-    document.getElementById('floatingPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
-    document.getElementById('floatingWhatsapp').href = `https://wa.me/${settings.whatsapp}?text=Hey,%20I%20am%20looking%20for%20Event%20services.`;
+    const footerYearEl = document.getElementById('footerYear');
+    if (footerYearEl) footerYearEl.innerText = new Date().getFullYear();
+
+    const floatingPhoneEl = document.getElementById('floatingPhone');
+    if (floatingPhoneEl) floatingPhoneEl.href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
+
+    const floatingWhatsappEl = document.getElementById('floatingWhatsapp');
+    if (floatingWhatsappEl) floatingWhatsappEl.href = `https://wa.me/${settings.whatsapp}?text=Hey,%20I%20am%20looking%20for%20Event%20services.`;
   }
 
   function initMobileMenu() {
@@ -40,7 +57,8 @@ const AppRouter = (() => {
       navContainer.classList.toggle('menu-open', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
       menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      menuToggle.querySelector('i').className = isOpen ? 'fa fa-times' : 'fa fa-bars';
+      const icon = menuToggle.querySelector('i');
+      if (icon) icon.className = isOpen ? 'fa fa-times' : 'fa fa-bars';
     });
 
     navItems.forEach(item => {
@@ -50,30 +68,11 @@ const AppRouter = (() => {
           navContainer.classList.remove('menu-open');
           menuToggle.setAttribute('aria-expanded', 'false');
           menuToggle.setAttribute('aria-label', 'Open navigation menu');
-          menuToggle.querySelector('i').className = 'fa fa-bars';
+          const icon = menuToggle.querySelector('i');
+          if (icon) icon.className = 'fa fa-bars';
         }
       });
     });
-  }
-
-  function handleRoute() {
-    const hash = window.location.hash;
-    const mainView = document.getElementById('mainWebsiteView');
-    const adminView = document.getElementById('adminContainer');
-
-    if (hash === '#admin') {
-      mainView.style.display = 'none';
-      adminView.style.display = 'block';
-
-      if (sessionStorage.getItem('isAdminLoggedIn') === 'true') {
-        AdminModule.showDashboard();
-      } else {
-        AdminModule.showLogin();
-      }
-    } else {
-      adminView.style.display = 'none';
-      mainView.style.display = 'block';
-    }
   }
 
   function initInquiryForm() {
@@ -98,19 +97,35 @@ const AppRouter = (() => {
     });
   }
 
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      if (!btn) return;
+
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all other open items
+        faqItems.forEach(i => i.classList.remove('active'));
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+
   return {
     init: () => {
       applySettings();
       initMobileMenu();
       ServicesModule.init();
       GalleryModule.init();
-      EstimatorModule.init();
       ReviewsModule.init();
-      AdminModule.init();
       initInquiryForm();
-
-      window.addEventListener('hashchange', handleRoute);
-      handleRoute();
+      initFaqAccordion();
     },
     applySettings
   };
