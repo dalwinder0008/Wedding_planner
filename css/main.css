@@ -122,11 +122,11 @@ nav {
   position: relative;
   display: flex;
   list-style: none;
-  gap: clamp(10px, 1.4vw, 24px);
+  gap: clamp(8px, 1.1vw, 20px);
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 0 130px 0 0;
   width: 100%;
 }
 
@@ -138,9 +138,10 @@ nav {
 .nav-item {
   text-decoration: none;
   color: #b32c3e;
-  font-size: 16px;
+  font-size: clamp(13px, 1.05vw, 15.5px);
   font-weight: 500;
   letter-spacing: 0.2px;
+  white-space: nowrap;
   transition: color 0.3s ease;
 }
 
@@ -448,7 +449,7 @@ footer {
     z-index: 1001;
   }
   .nav-container.menu-open nav { display: block; }
-  .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-links { flex-direction: column; align-items: stretch; gap: 0; padding: 0; }
   .nav-links li:last-child { position: static; }
   .nav-item { display: flex; padding: 12px; }
   .admin-nav-link { border: 0; }

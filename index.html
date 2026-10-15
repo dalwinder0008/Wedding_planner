@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WedHappy | Wedding Planner & Event Management</title>
-  <meta name="description" content="Plan your dream wedding with WedHappy. Explore wedding planning, birthday celebrations, event decoration, and budget estimation services.">
-  <meta name="keywords" content="wedding planner, event management, birthday party planner, wedding decor, catering services, event budget estimator, WedHappy, luxury wedding planner India">
+  <title>WedHappy | Wedding & Honeymoon Planner, Event Management</title>
+  <meta name="description" content="Plan your dream wedding, luxury honeymoon, and celebrations with WedHappy. Explore wedding planning, honeymoon packages, birthday celebrations, and budget estimation services.">
+  <meta name="keywords" content="wedding planner, honeymoon planner, honeymoon packages, romantic getaways, luxury honeymoon India, event management, birthday party planner, wedding decor, catering services, event budget estimator, WedHappy">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://wedhappy.in/">
 
@@ -18,9 +18,9 @@
     "url": "https://wedhappy.in/",
     "logo": "https://wedhappy.in/public/new-logo.png",
     "image": "https://wedhappy.in/public/new-logo.png",
-    "description": "WedHappy is a premier wedding planning and event management agency in India, specializing in luxury weddings, birthday party planning, theme decor, catering, photography, and event budget estimation.",
-    "telephone": "+91-8837531768",
-    "email": "Ashish73409@gmail.com",
+    "description": "WedHappy is a premier wedding planning, honeymoon planning, and event management agency in India, specializing in luxury weddings, romantic getaways, birthday celebrations, theme decor, catering, and event budget estimation.",
+    "telephone": "+91-8847386897",
+    "email": "wedhappyofficial@gmail.com",
     "priceRange": "₹₹₹",
     "address": {
       "@type": "PostalAddress",
@@ -47,6 +47,14 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
+            "name": "Honeymoon & Romantic Escapes Planning",
+            "description": "Tailor-made luxury honeymoon packages, private villas, international getaways, and romantic experiences for newlyweds."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
             "name": "Birthday Party Planning",
             "description": "Whimsical themes, captivating entertainment, and seamless event execution for birthdays."
           }
@@ -56,7 +64,7 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Event Budget Estimator",
-            "description": "Instant online budget estimation for weddings, pre-wedding functions, and birthday celebrations."
+            "description": "Instant online budget estimation for weddings, honeymoons, pre-wedding functions, and birthday celebrations."
           }
         }
       ]
@@ -110,6 +118,7 @@
           <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="nav-item">Home</a></li>
             <li><a href="#wedding-planner" class="nav-item">Weddings</a></li>
+            <li><a href="#honeymoon-planner" class="nav-item">Honeymoons</a></li>
             <li><a href="#birthday-planner" class="nav-item">Birthdays</a></li>
             <li><a href="#estimator" class="nav-item">Estimator</a></li>
             <li><a href="#gallery" class="nav-item">Portfolio</a></li>
@@ -126,11 +135,12 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-      <span class="hero-eyebrow">WEDDINGS <i class="fa fa-diamond"></i> BIRTHDAYS <i class="fa fa-diamond"></i> UNFORGETTABLE MOMENTS</span>
+      <span class="hero-eyebrow">WEDDINGS <i class="fa fa-diamond"></i> HONEYMOONS <i class="fa fa-diamond"></i> BIRTHDAYS <i class="fa fa-diamond"></i> UNFORGETTABLE MOMENTS</span>
       <h1 id="heroTitle">Your once-in-a-lifetime celebration, beautifully planned.</h1>
       <p id="heroSubtitle">From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.</p>
       <div class="hero-btn-group">
-        <a href="#wedding-planner" class="btn-luxury">Explore Services</a>
+        <a href="#wedding-planner" class="btn-luxury">Weddings</a>
+        <a href="#honeymoon-planner" class="btn-luxury">Honeymoons</a>
         <a href="#estimator" class="btn-luxury btn-gold">Estimate Budget</a>
       </div>
       <div class="hero-proof" aria-label="Why couples choose Grand Celebrations">
@@ -148,6 +158,16 @@
         <p class="section-subtitle">Comprehensive luxury wedding arrangements tailored to your sacred rituals and celebration style</p>
       </div>
       <div class="services-grid" id="weddingServicesGrid"></div>
+    </section>
+
+    <!-- HONEYMOON PLANNER SERVICES -->
+    <section class="section-padding honeymoon-section" id="honeymoon-planner">
+      <div class="section-header">
+        <span class="section-kicker">ROMANTIC ESCAPES &amp; GETAWAYS</span>
+        <h2 class="section-title">Honeymoon Planning</h2>
+        <p class="section-subtitle">Bespoke romantic escapes, luxury international suites, and dreamy post-wedding journeys designed for two</p>
+      </div>
+      <div class="services-grid" id="honeymoonServicesGrid"></div>
     </section>
 
     <!-- BIRTHDAY PARTY PLANNER SERVICES -->
@@ -174,6 +194,7 @@
             <label for="calcEventType">Event Type</label>
             <select id="calcEventType">
               <option value="wedding">Full Wedding Ceremony</option>
+              <option value="honeymoon">Luxury Honeymoon Package</option>
               <option value="prewedding">Pre-Wedding / Sangeet / Haldi</option>
               <option value="birthday">Birthday Party Celebration</option>
             </select>
@@ -213,6 +234,7 @@
       <div class="filter-buttons">
         <button class="filter-btn active" data-category="all">All</button>
         <button class="filter-btn" data-category="wedding">Weddings</button>
+        <button class="filter-btn" data-category="honeymoon">Honeymoon</button>
         <button class="filter-btn" data-category="haldi">Haldi & Mehendi</button>
         <button class="filter-btn" data-category="sangeet">Sangeet & DJ</button>
         <button class="filter-btn" data-category="birthday">Birthday</button>
@@ -289,6 +311,7 @@
             <h3 class="serif-font">EXPLORE</h3>
             <ul class="footer-links">
               <li><a href="#wedding-planner">Weddings</a></li>
+              <li><a href="#honeymoon-planner">Honeymoons</a></li>
               <li><a href="#birthday-planner">Birthdays</a></li>
               <li><a href="#estimator">Budget Estimator</a></li>
               <li><a href="#gallery">Portfolio</a></li>
@@ -298,9 +321,9 @@
           <div class="footer-col">
             <h3 class="serif-font">GET IN TOUCH</h3>
             <ul class="footer-links footer-contact-links">
-              <li><a href="mailto:Ashish73409@gmail.com" id="footerEmail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Ashish73409@gmail.com</a></li>
-              <li><a href="tel:+918837531768" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88375 31768</a></li>
-              <li><a href="https://wa.me/918837531768" id="footerWhatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+              <li><a href="mailto:wedhappyofficial@gmail.com" id="footerEmail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> wedhappyofficial@gmail.com</a></li>
+              <li><a href="tel:+918847386897" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88473 86897</a></li>
+              <li><a href="https://wa.me/918847386897" id="footerWhatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -322,7 +345,7 @@
               <p>Inquiry details and reviews submitted on this site are saved in this browser on this device. They are not sent to a website server by this site.</p>
               <p>When you submit an inquiry, WhatsApp opens with the details you entered so you can choose whether to send them. WhatsApp handles any information you share there under its own privacy policy.</p>
               <p>Reviews include the name, city, rating, and comment you provide, and are shown on this site in this browser. Avoid entering sensitive personal information.</p>
-              <p>To remove locally saved information, clear this site's data in your browser settings. For questions, contact <a href="mailto:Ashish73409@gmail.com">Ashish73409@gmail.com</a>.</p>
+              <p>To remove locally saved information, clear this site's data in your browser settings. For questions, contact <a href="mailto:wedhappyofficial@gmail.com">wedhappyofficial@gmail.com</a>.</p>
             </div>
           </details>
         </div>
@@ -331,10 +354,10 @@
 
     <!-- FLOATING ACTIONS -->
     <div class="floating-actions">
-      <a href="tel:8837531768" class="action-btn btn-phone" id="floatingPhone" title="Direct Phone Call">
+      <a href="tel:+918847386897" class="action-btn btn-phone" id="floatingPhone" title="Direct Phone Call">
         <i class="fa fa-phone"></i>
       </a>
-      <a href="https://wa.me/918837531768?text=Hey,%20I%20am%20looking%20for%20Event%20services." target="_blank" class="action-btn btn-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">
+      <a href="https://wa.me/918847386897?text=Hey,%20I%20am%20looking%20for%20Event%20services." target="_blank" class="action-btn btn-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
@@ -406,6 +429,7 @@
                 <label for="newImageCategory">Select Category</label>
                 <select id="newImageCategory" required>
                   <option value="wedding">Weddings</option>
+                  <option value="honeymoon">Honeymoon & Romantic</option>
                   <option value="haldi">Haldi & Mehendi</option>
                   <option value="sangeet">Sangeet & DJ</option>
                   <option value="birthday">Birthday</option>
@@ -498,6 +522,10 @@
                 <div class="admin-form-group">
                   <label for="estimatorWeddingRate">Wedding per guest</label>
                   <input type="number" id="estimatorWeddingRate" min="0" step="100" required>
+                </div>
+                <div class="admin-form-group">
+                  <label for="estimatorHoneymoonRate">Honeymoon rate</label>
+                  <input type="number" id="estimatorHoneymoonRate" min="0" step="100" required>
                 </div>
                 <div class="admin-form-group">
                   <label for="estimatorPreweddingRate">Pre-wedding per guest</label>

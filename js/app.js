@@ -5,10 +5,10 @@ const AppRouter = (() => {
     document.getElementById('heroTitle').innerText = settings.heroTitle;
     document.getElementById('heroSubtitle').innerText = settings.heroSubtitle;
 
-    document.getElementById('footerEmail').innerText = settings.email;
+    document.getElementById('footerEmail').innerHTML = `<i class="fa-solid fa-envelope" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.email)}`;
     document.getElementById('footerEmail').href = `mailto:${settings.email}`;
 
-    document.getElementById('footerPhone').innerText = settings.phone;
+    document.getElementById('footerPhone').innerHTML = `<i class="fa-solid fa-phone" aria-hidden="true"></i> ${StorageModule.escapeHtml(settings.phone)}`;
     document.getElementById('footerPhone').href = `tel:${settings.phone.replace(/[^0-9+]/g, '')}`;
 
     document.getElementById('footerHandle').innerText = settings.socialHandle;

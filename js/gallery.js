@@ -15,7 +15,8 @@ const GalleryModule = (() => {
         div.setAttribute('data-category', item.category);
         const label = item.category === 'haldi' ? 'Haldi & Mehendi' :
           item.category === 'sangeet' ? 'Sangeet & DJ' :
-          item.category === 'birthday' ? 'Birthday Celebrations' : 'Wedding Ceremonies';
+          item.category === 'birthday' ? 'Birthday Celebrations' :
+          item.category === 'honeymoon' ? 'Romantic Honeymoon' : 'Wedding Ceremonies';
         div.innerHTML = `
           <img src="${item.url}" alt="${StorageModule.escapeHtml(label)}" loading="lazy">
           <div class="gallery-caption">

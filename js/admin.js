@@ -41,6 +41,8 @@ const AdminModule = (() => {
     document.getElementById('estimatorWeddingRate').value = settings.estimatorRates.perGuest.wedding;
     document.getElementById('estimatorPreweddingRate').value = settings.estimatorRates.perGuest.prewedding;
     document.getElementById('estimatorBirthdayRate').value = settings.estimatorRates.perGuest.birthday;
+    const honeymoonRateEl = document.getElementById('estimatorHoneymoonRate');
+    if (honeymoonRateEl) honeymoonRateEl.value = settings.estimatorRates.perGuest.honeymoon || 2500;
     document.getElementById('estimatorDecorCost').value = settings.estimatorRates.fixedCost.decor;
     document.getElementById('estimatorPhotoCost').value = settings.estimatorRates.fixedCost.photo;
     document.getElementById('estimatorDjCost').value = settings.estimatorRates.fixedCost.dj;
@@ -232,7 +234,8 @@ const AdminModule = (() => {
           perGuest: {
             wedding: Number(document.getElementById('estimatorWeddingRate').value),
             prewedding: Number(document.getElementById('estimatorPreweddingRate').value),
-            birthday: Number(document.getElementById('estimatorBirthdayRate').value)
+            birthday: Number(document.getElementById('estimatorBirthdayRate').value),
+            honeymoon: Number(document.getElementById('estimatorHoneymoonRate')?.value || 2500)
           },
           fixedCost: {
             decor: Number(document.getElementById('estimatorDecorCost').value),

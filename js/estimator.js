@@ -3,7 +3,7 @@ const EstimatorModule = (() => {
     const eventType = document.getElementById('calcEventType').value;
     const guests = parseInt(document.getElementById('guestCount').value);
     const rates = StorageModule.getSettings().estimatorRates;
-    const baseRate = rates.perGuest[eventType];
+    const baseRate = rates.perGuest[eventType] || 1200;
 
     let multiplier = 0;
     if (document.getElementById('srvDecor').checked) multiplier += rates.fixedCost.decor;
@@ -36,9 +36,16 @@ const EstimatorModule = (() => {
     document.getElementById('btnSendBudget').addEventListener('click', () => {
       const settings = StorageModule.getSettings();
       const eventType = document.getElementById('calcEventType').value;
+      const typeNames = {
+        wedding: 'Full Wedding Ceremony',
+        prewedding: 'Pre-Wedding / Sangeet / Haldi',
+        birthday: 'Birthday Party Celebration',
+        honeymoon: 'Luxury Honeymoon Package'
+      };
+      const formattedType = typeNames[eventType] || eventType;
       const guests = slider.value;
       const budget = document.getElementById('estimatedPriceDisplay').innerText;
-      const msg = `Hey, I checked your online Event Estimator:%0A*Event:* ${eventType}%0A*Guests:* ${guests}%0A*Estimated Budget:* ${budget}%0APlease share the best customized quote!`;
+      const msg = `Hey, I checked your online Event Estimator:%0A*Event:* ${encodeURIComponent(formattedType)}%0A*Guests:* ${encodeURIComponent(guests)}%0A*Estimated Budget:* ${encodeURIComponent(budget)}%0APlease share the best customized quote!`;
       window.open(`https://wa.me/${settings.whatsapp}?text=${msg}`, '_blank');
     });
 

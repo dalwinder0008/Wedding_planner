@@ -32,6 +32,7 @@
 }
 
 .birthday-section { background-color: #f5efe6; }
+.honeymoon-section { background: linear-gradient(180deg, #fdf9f5 0%, #f7eee7 100%); }
 .reviews-section { background-color: #f7f3ee; }
 
 /* BUTTONS */
