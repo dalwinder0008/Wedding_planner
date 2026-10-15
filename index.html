@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WedHappy | Wedding & Honeymoon Planner, Event Management</title>
-  <meta name="description" content="Plan your dream wedding, luxury honeymoon, and celebrations with WedHappy. Explore wedding planning, honeymoon packages, birthday celebrations, and budget estimation services.">
-  <meta name="keywords" content="wedding planner, honeymoon planner, honeymoon packages, romantic getaways, luxury honeymoon India, event management, birthday party planner, wedding decor, catering services, event budget estimator, WedHappy">
+  <title>WedHappy | Luxury Wedding & Honeymoon Planner, Event Management</title>
+  <meta name="description" content="Plan your dream wedding, luxury honeymoon, and celebrations with WedHappy. Explore wedding planning, honeymoon packages, and birthday party management.">
+  <meta name="keywords" content="wedding planner, honeymoon planner, honeymoon packages, romantic getaways, luxury honeymoon India, event management, birthday party planner, wedding decor, catering services, WedHappy">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://wedhappy.in/">
 
@@ -18,7 +18,7 @@
     "url": "https://wedhappy.in/",
     "logo": "https://wedhappy.in/public/new-logo.png",
     "image": "https://wedhappy.in/public/new-logo.png",
-    "description": "WedHappy is a premier wedding planning, honeymoon planning, and event management agency in India, specializing in luxury weddings, romantic getaways, birthday celebrations, theme decor, catering, and event budget estimation.",
+    "description": "WedHappy is a premier wedding planning, honeymoon planning, and event management agency in India, specializing in luxury weddings, romantic getaways, birthday celebrations, theme decor, and catering.",
     "telephone": [
       "+91-8847386897",
       "+91-8837531768"
@@ -61,14 +61,6 @@
             "name": "Birthday Party Planning",
             "description": "Whimsical themes, captivating entertainment, and seamless event execution for birthdays."
           }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Event Budget Estimator",
-            "description": "Instant online budget estimation for weddings, honeymoons, pre-wedding functions, and birthday celebrations."
-          }
         }
       ]
     }
@@ -79,7 +71,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WedHappy">
   <meta property="og:title" content="WedHappy | Wedding Planner & Event Management">
-  <meta property="og:description" content="Explore wedding planning, birthday celebrations, event decoration, and budget estimation services with WedHappy.">
+  <meta property="og:description" content="Explore wedding planning, honeymoon getaways, birthday celebrations, and event decoration services with WedHappy.">
   <meta property="og:url" content="https://wedhappy.in/">
   <meta property="og:image" content="https://wedhappy.in/public/new-logo.png">
   <meta property="og:image:alt" content="WedHappy wedding and event planning">
@@ -104,7 +96,6 @@
   <!-- Modular CSS Files -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 
@@ -113,20 +104,18 @@
     <!-- NAVIGATION BAR -->
     <header>
       <div class="nav-container">
-        <a href="#home" class="brand-logo" id="siteLogo" aria-label="Wedhappy.in home">
+        <a href="index.html" class="brand-logo" id="siteLogo" aria-label="Wedhappy.in home">
           <img src="public/new-logo.png" alt="WedHappy.in, your dream wedding partner" class="logo-img">
         </a>
 
         <nav aria-label="Main navigation">
           <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="nav-item">Home</a></li>
-            <li><a href="#wedding-planner" class="nav-item">Weddings</a></li>
-            <li><a href="#honeymoon-planner" class="nav-item">Honeymoons</a></li>
-            <li><a href="#birthday-planner" class="nav-item">Birthdays</a></li>
-            <li><a href="#estimator" class="nav-item">Estimator</a></li>
-            <li><a href="#gallery" class="nav-item">Portfolio</a></li>
-            <li><a href="#reviews" class="nav-item">Reviews</a></li>
-            <li><a href="#admin" class="admin-nav-link nav-item"><i class="fa fa-lock" aria-hidden="true"></i> Admin</a></li>
+            <li><a href="index.html" class="nav-item active">Home</a></li>
+            <li><a href="wedding.html" class="nav-item">Weddings</a></li>
+            <li><a href="honeymoon.html" class="nav-item">Honeymoons</a></li>
+            <li><a href="birthday.html" class="nav-item">Birthdays</a></li>
+            <li><a href="portfolio.html" class="nav-item">Portfolio</a></li>
+            <li><a href="reviews.html" class="nav-item">Reviews</a></li>
             <li><a href="#contact" class="contact-nav-link nav-item">Contact Us</a></li>
           </ul>
         </nav>
@@ -142,9 +131,9 @@
       <h1 id="heroTitle">Your once-in-a-lifetime celebration, beautifully planned.</h1>
       <p id="heroSubtitle">From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.</p>
       <div class="hero-btn-group">
-        <a href="#wedding-planner" class="btn-luxury">Weddings</a>
-        <a href="#honeymoon-planner" class="btn-luxury">Honeymoons</a>
-        <a href="#estimator" class="btn-luxury btn-gold">Estimate Budget</a>
+        <a href="wedding.html" class="btn-luxury">Weddings</a>
+        <a href="honeymoon.html" class="btn-luxury">Honeymoons</a>
+        <a href="birthday.html" class="btn-luxury btn-gold">Birthdays</a>
       </div>
       <div class="hero-proof" aria-label="Why couples choose Grand Celebrations">
         <span><strong>100+</strong> celebrations styled</span>
@@ -161,6 +150,9 @@
         <p class="section-subtitle">Comprehensive luxury wedding arrangements tailored to your sacred rituals and celebration style</p>
       </div>
       <div class="services-grid" id="weddingServicesGrid"></div>
+      <div style="text-align: center; margin-top: 35px;">
+        <a href="wedding.html" class="btn-luxury btn-gold">Explore All Wedding Services</a>
+      </div>
     </section>
 
     <!-- HONEYMOON PLANNER SERVICES -->
@@ -171,6 +163,9 @@
         <p class="section-subtitle">Bespoke romantic escapes, luxury international suites, and dreamy post-wedding journeys designed for two</p>
       </div>
       <div class="services-grid" id="honeymoonServicesGrid"></div>
+      <div style="text-align: center; margin-top: 35px;">
+        <a href="honeymoon.html" class="btn-luxury btn-gold">Explore All Honeymoon Packages</a>
+      </div>
     </section>
 
     <!-- BIRTHDAY PARTY PLANNER SERVICES -->
@@ -181,48 +176,8 @@
         <p class="section-subtitle">Whimsical themes, captivating entertainment, and seamless event execution</p>
       </div>
       <div class="services-grid" id="birthdayServicesGrid"></div>
-    </section>
-
-    <!-- BUDGET CALCULATOR / ESTIMATOR -->
-    <section class="section-padding" id="estimator">
-      <div class="section-header">
-        <span class="section-kicker">PLAN WITH CLARITY</span>
-        <h2 class="section-title">Event Budget Estimator</h2>
-        <p class="section-subtitle">Calculate an instant estimated price based on your event requirements</p>
-      </div>
-
-      <div class="calc-box">
-        <div class="calc-row">
-          <div class="calc-field">
-            <label for="calcEventType">Event Type</label>
-            <select id="calcEventType">
-              <option value="wedding">Full Wedding Ceremony</option>
-              <option value="honeymoon">Luxury Honeymoon Package</option>
-              <option value="prewedding">Pre-Wedding / Sangeet / Haldi</option>
-              <option value="birthday">Birthday Party Celebration</option>
-            </select>
-          </div>
-
-          <div class="calc-field">
-            <label for="guestCount">Estimated Guests: <span id="guestCountVal" class="guest-count-val">250</span></label>
-            <input type="range" id="guestCount" min="50" max="1500" step="50" value="250">
-          </div>
-        </div>
-
-        <label class="calc-field-title">Select Services Required:</label>
-        <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" id="srvDecor" checked> Theme Decor & Lighting</label>
-          <label class="checkbox-item"><input type="checkbox" id="srvCatering" checked> Catering & Gourmet Menu</label>
-          <label class="checkbox-item"><input type="checkbox" id="srvPhoto" checked> Photography & Video Film</label>
-          <label class="checkbox-item"><input type="checkbox" id="srvDj" checked> DJ, Sound & Production</label>
-          <label class="checkbox-item"><input type="checkbox" id="srvCoordination"> On-Day Coordination</label>
-        </div>
-
-        <div class="estimate-result">
-          <p class="result-title">Estimated Investment Range</p>
-          <span id="estimatedPriceDisplay">₹ 2,75,000 - ₹ 3,50,000</span>
-          <button class="btn-luxury btn-gold" id="btnSendBudget">Share Estimate On WhatsApp</button>
-        </div>
+      <div style="text-align: center; margin-top: 35px;">
+        <a href="birthday.html" class="btn-luxury btn-gold">Explore All Birthday Services</a>
       </div>
     </section>
 
@@ -238,43 +193,89 @@
         <button class="filter-btn active" data-category="all">All</button>
         <button class="filter-btn" data-category="wedding">Weddings</button>
         <button class="filter-btn" data-category="honeymoon">Honeymoon</button>
-        <button class="filter-btn" data-category="haldi">Haldi & Mehendi</button>
-        <button class="filter-btn" data-category="sangeet">Sangeet & DJ</button>
+        <button class="filter-btn" data-category="haldi">Haldi &amp; Mehendi</button>
+        <button class="filter-btn" data-category="sangeet">Sangeet &amp; DJ</button>
         <button class="filter-btn" data-category="birthday">Birthday</button>
       </div>
 
       <div class="gallery-grid" id="galleryGrid"></div>
+      <div style="text-align: center; margin-top: 35px;">
+        <a href="portfolio.html" class="btn-luxury btn-gold">View Complete Portfolio</a>
+      </div>
     </section>
 
     <!-- TESTIMONIALS & USER REVIEWS -->
     <section class="section-padding reviews-section" id="reviews">
       <div class="section-header">
         <span class="section-kicker">WORDS FROM OUR COUPLES &amp; FAMILIES</span>
-        <h2 class="section-title">Client Love & Testimonials</h2>
+        <h2 class="section-title">Client Love &amp; Testimonials</h2>
         <p class="section-subtitle">Real experiences and feedback from our cherished clients</p>
       </div>
 
       <div class="testimonial-grid" id="reviewsContainer"></div>
+      <div style="text-align: center; margin-top: 35px;">
+        <a href="reviews.html" class="btn-luxury btn-gold">Read More Reviews &amp; Leave Yours</a>
+      </div>
+    </section>
 
-      <div class="add-review-wrapper">
-        <h3 class="serif-font" style="text-align: center; margin-bottom: 12px; font-size: 24px;">Leave Your Review</h3>
-        <p style="text-align:center; font-size: 13px; color: #555; margin-bottom: 25px;">Your genuine feedback means the world to us!</p>
-        
-        <form id="userReviewForm">
-          <div class="review-form-grid">
-            <input type="text" id="reviewAuthor" placeholder="Your Full Name" required>
-            <input type="text" id="reviewCity" placeholder="City / Event (e.g., Delhi Wedding)" required>
-            <select id="reviewRating" aria-label="Rating Stars" required>
-              <option value="5">⭐⭐⭐⭐⭐ (5 Stars - Exceptional)</option>
-              <option value="4">⭐⭐⭐⭐ (4 Stars - Great)</option>
-              <option value="3">⭐⭐⭐ (3 Stars - Good)</option>
-            </select>
+    <!-- TOP 5 FAQ SECTION -->
+    <section class="section-padding faq-section" id="faq">
+      <div class="section-header">
+        <span class="section-kicker">COMMON QUESTIONS</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Quick answers to help you plan your big celebration with WedHappy</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>1. What event planning services does WedHappy provide?</span>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>WedHappy specializes in end-to-end luxury wedding planning, tailor-made honeymoon packages, pre-wedding functions (Haldi & Sangeet), birthday party planning, decor & lighting styling, and gourmet catering.</p>
           </div>
-          <textarea id="reviewComment" rows="3" placeholder="Describe your experience with our services..." required></textarea>
-          <div style="text-align: center; margin-top: 20px;">
-            <button type="submit" class="btn-luxury btn-gold">Submit Review</button>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>2. Do you offer services across India or only in specific cities?</span>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We provide Pan India event management services with on-ground teams active in Delhi NCR, Punjab (Chandigarh, Ludhiana), Rajasthan (Jaipur, Udaipur), Goa, Kerala, and major destination hubs.</p>
           </div>
-        </form>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>3. How can I get a customized event quote from WedHappy?</span>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>You can fill out our Contact form below or send us an instant WhatsApp message at +91 88375 31768. Share your event type, date, and guest count to receive a personalized quote!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>4. Can we customize packages according to our budget and preferences?</span>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Every celebration is unique. We tailor decor, catering, entertainment, and logistics to match your budget and aesthetic preferences perfectly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>5. How do I book WedHappy for my upcoming event?</span>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>After an initial consultation and moodboard presentation, we finalize the booking with a transparent agreement and advance payment so you can relax while we bring your dream event to life.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -307,18 +308,17 @@
       <div class="footer-inner">
         <div class="footer-grid">
           <div class="footer-col footer-intro">
-            <a href="#home" class="footer-brand">Wedhappy.in</a>
+            <a href="index.html" class="footer-brand">Wedhappy.in</a>
             <p>Thoughtfully planned celebrations, made personal.</p>
           </div>
           <div class="footer-col">
             <h3 class="serif-font">EXPLORE</h3>
             <ul class="footer-links">
-              <li><a href="#wedding-planner">Weddings</a></li>
-              <li><a href="#honeymoon-planner">Honeymoons</a></li>
-              <li><a href="#birthday-planner">Birthdays</a></li>
-              <li><a href="#estimator">Budget Estimator</a></li>
-              <li><a href="#gallery">Portfolio</a></li>
-              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="wedding.html">Weddings</a></li>
+              <li><a href="honeymoon.html">Honeymoons</a></li>
+              <li><a href="birthday.html">Birthdays</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -348,8 +348,6 @@
             <div class="footer-policy-content">
               <p>Inquiry details and reviews submitted on this site are saved in this browser on this device. They are not sent to a website server by this site.</p>
               <p>When you submit an inquiry, WhatsApp opens with the details you entered so you can choose whether to send them. WhatsApp handles any information you share there under its own privacy policy.</p>
-              <p>Reviews include the name, city, rating, and comment you provide, and are shown on this site in this browser. Avoid entering sensitive personal information.</p>
-              <p>To remove locally saved information, clear this site's data in your browser settings. For questions, contact <a href="mailto:wedhappyofficial@gmail.com">wedhappyofficial@gmail.com</a>.</p>
             </div>
           </details>
         </div>
@@ -379,220 +377,11 @@
     </div>
   </main>
 
-  <!-- ================= ADMIN PORTAL VIEW (#admin) ================= -->
-  <aside id="adminContainer" class="admin-wrapper" style="display: none;">
-    <!-- LOGIN SCREEN -->
-    <div id="adminLoginScreen" class="admin-login-box">
-      <div class="admin-card">
-        <h2 class="serif-font" style="margin-bottom: 8px;">Admin Portal Login</h2>
-        <p style="font-size: 13px; color: #555; margin-bottom: 25px;">Enter credentials to manage images, services, and content</p>
-        <form id="adminLoginForm">
-          <div class="admin-form-group">
-            <label for="adminUser">Username</label>
-            <input type="text" id="adminUser" placeholder="Enter Username" required>
-          </div>
-          <div class="admin-form-group">
-            <label for="adminPass">Password</label>
-            <input type="password" id="adminPass" placeholder="Enter Password" required>
-          </div>
-          <div id="loginErrorMsg" class="error-msg" style="display: none;">Invalid Username or Password!</div>
-          <button type="submit" class="btn-luxury btn-gold" style="width: 100%; margin-top: 15px;">Login to Dashboard</button>
-          <button type="button" class="btn-text-back" id="btnBackToSite">Back to Main Website</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- DASHBOARD -->
-    <div id="adminDashboard" style="display: none;" class="admin-dashboard">
-      <div class="admin-topbar">
-        <div>
-          <h2 class="serif-font">Control Center & Dashboard</h2>
-          <span style="font-size: 13px; color: #888;">Logged in as: <strong>Admin@1</strong></span>
-        </div>
-        <div style="display: flex; gap: 10px;">
-          <button class="btn-admin-action" id="btnViewLiveSite"><i class="fa fa-eye"></i> View Live Site</button>
-          <button class="btn-admin-danger" id="btnAdminLogout"><i class="fa fa-sign-out-alt"></i> Logout</button>
-        </div>
-      </div>
-
-      <!-- TABS -->
-      <div class="admin-tabs">
-        <button class="admin-tab-btn active" data-tab="tabPortfolio"><i class="fa fa-images"></i> Manage Portfolio Images</button>
-        <button class="admin-tab-btn" data-tab="tabBirthdays"><i class="fa fa-birthday-cake"></i> Manage Birthday Services</button>
-        <button class="admin-tab-btn" data-tab="tabGeneral"><i class="fa fa-cog"></i> General Settings & Footer</button>
-        <button class="admin-tab-btn" data-tab="tabReviews"><i class="fa fa-star"></i> Reviews & Inquiries</button>
-      </div>
-
-      <!-- TAB 1: PORTFOLIO -->
-      <section id="tabPortfolio" class="admin-tab-pane active">
-        <div class="admin-content-grid">
-          <div class="admin-section-card">
-            <h3>Add New Portfolio Image</h3>
-            <form id="addImageForm">
-              <div class="admin-form-group">
-                <label for="newImageCategory">Select Category</label>
-                <select id="newImageCategory" required>
-                  <option value="wedding">Weddings</option>
-                  <option value="honeymoon">Honeymoon & Romantic</option>
-                  <option value="haldi">Haldi & Mehendi</option>
-                  <option value="sangeet">Sangeet & DJ</option>
-                  <option value="birthday">Birthday</option>
-                </select>
-              </div>
-              <div class="admin-form-group">
-                <label for="newImageFile">Upload From Device</label>
-                <input type="file" id="newImageFile" accept="image/*">
-                <small style="color: #777;">Or provide image URL below:</small>
-              </div>
-              <div class="admin-form-group">
-                <label for="newImageUrl">Direct Image URL</label>
-                <input type="url" id="newImageUrl" placeholder="https://images.unsplash.com/...">
-              </div>
-              <button type="submit" class="btn-luxury btn-gold" style="width:100%;">Upload & Add To Portfolio</button>
-            </form>
-          </div>
-
-          <div class="admin-section-card">
-            <h3>Existing Portfolio Photos</h3>
-            <p style="font-size: 13px; color: #777; margin-bottom: 15px;">Delete or view current images in the gallery:</p>
-            <div id="adminGalleryList" class="admin-gallery-preview-grid"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TAB 2: BIRTHDAYS -->
-      <section id="tabBirthdays" class="admin-tab-pane">
-        <div class="admin-content-grid">
-          <div class="admin-section-card">
-            <h3 id="birthdayFormHeading">Add New Birthday Service</h3>
-            <form id="birthdayServiceForm">
-              <input type="hidden" id="editBirthdayServiceId">
-              <div class="admin-form-group">
-                <label for="bdayTitle">Service Title</label>
-                <input type="text" id="bdayTitle" placeholder="e.g., Theme Balloon Setup" required>
-              </div>
-              <div class="admin-form-group">
-                <label for="bdayShortDesc">Short Description (Card View)</label>
-                <textarea id="bdayShortDesc" rows="3" placeholder="Brief summary visible on homepage card" required></textarea>
-              </div>
-              <div class="admin-form-group">
-                <label for="bdayDetailedDesc">Detailed Inclusions (Popup View)</label>
-                <textarea id="bdayDetailedDesc" rows="3" placeholder="Complete details for modal popup" required></textarea>
-              </div>
-              <button type="submit" id="bdaySubmitBtn" class="btn-luxury btn-gold" style="width: 100%;">Add Service</button>
-              <button type="button" id="bdayCancelEditBtn" style="display:none; margin-top:8px; width:100%;" class="btn-text-back">Cancel Edit</button>
-            </form>
-          </div>
-
-          <div class="admin-section-card">
-            <h3>Current Birthday Planning Services</h3>
-            <div id="adminBirthdayList" class="admin-list-container"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TAB 3: GENERAL & FOOTER -->
-      <section id="tabGeneral" class="admin-tab-pane">
-        <div class="admin-section-card" style="max-width: 750px; margin: auto;">
-          <h3>Homepage & Footer Details</h3>
-          <form id="editContentForm">
-            <div class="admin-form-group">
-              <label for="editHeroTitle">Hero Headline</label>
-              <input type="text" id="editHeroTitle" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="editHeroSubtitle">Hero Subtitle / Tagline</label>
-              <textarea id="editHeroSubtitle" rows="3" required></textarea>
-            </div>
-            <div class="admin-form-group">
-              <label for="editPhone">Contact Phone 1 (Call Only)</label>
-              <input type="text" id="editPhone" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="editPhone2">Contact Phone 2 (Call)</label>
-              <input type="text" id="editPhone2" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="editWhatsapp">WhatsApp Number (e.g., 918837531768 - Country code included, no + or spaces)</label>
-              <input type="text" id="editWhatsapp" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="editEmail">Contact Email Address</label>
-              <input type="email" id="editEmail" required>
-            </div>
-            <div class="admin-form-group">
-              <label for="editSocialHandle">Social Media Handle (Footer)</label>
-              <input type="text" id="editSocialHandle" required>
-            </div>
-            <div class="admin-rate-settings">
-              <h4>Estimator Budget Rates (INR)</h4>
-              <div class="admin-rate-grid">
-                <div class="admin-form-group">
-                  <label for="estimatorWeddingRate">Wedding per guest</label>
-                  <input type="number" id="estimatorWeddingRate" min="0" step="100" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorHoneymoonRate">Honeymoon rate</label>
-                  <input type="number" id="estimatorHoneymoonRate" min="0" step="100" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorPreweddingRate">Pre-wedding per guest</label>
-                  <input type="number" id="estimatorPreweddingRate" min="0" step="100" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorBirthdayRate">Birthday per guest</label>
-                  <input type="number" id="estimatorBirthdayRate" min="0" step="100" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorDecorCost">Decor &amp; lighting</label>
-                  <input type="number" id="estimatorDecorCost" min="0" step="1000" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorPhotoCost">Photography &amp; video</label>
-                  <input type="number" id="estimatorPhotoCost" min="0" step="1000" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorDjCost">DJ &amp; production</label>
-                  <input type="number" id="estimatorDjCost" min="0" step="1000" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorCoordinationCost">On-day coordination</label>
-                  <input type="number" id="estimatorCoordinationCost" min="0" step="1000" required>
-                </div>
-                <div class="admin-form-group">
-                  <label for="estimatorRangePercent">Upper estimate margin (%)</label>
-                  <input type="number" id="estimatorRangePercent" min="0" max="300" step="1" required>
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn-luxury btn-gold" style="width: 100%;">Save Website & Footer Changes</button>
-          </form>
-        </div>
-      </section>
-
-      <!-- TAB 4: REVIEWS & INQUIRIES -->
-      <section id="tabReviews" class="admin-tab-pane">
-        <div class="admin-content-grid">
-          <div class="admin-section-card">
-            <h3>Manage Client Reviews</h3>
-            <div id="adminReviewsList" class="admin-list-container"></div>
-          </div>
-          <div class="admin-section-card">
-            <h3>Received Form Inquiries</h3>
-            <div id="adminInquiriesList" class="admin-list-container"></div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </aside>
-
-  <!-- Modular Scripts in Order -->
+  <!-- Modular Scripts -->
   <script src="js/storage.js"></script>
   <script src="js/services.js"></script>
   <script src="js/gallery.js"></script>
-  <script src="js/estimator.js"></script>
   <script src="js/reviews.js"></script>
-  <script src="js/admin.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
