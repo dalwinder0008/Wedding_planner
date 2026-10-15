@@ -497,6 +497,72 @@
 .btn-phone { background-color: var(--call-black); }
 .btn-whatsapp { background-color: var(--whatsapp-green); }
 
+/* FAQ SECTION */
+.faq-section {
+  background-color: #faf7f2;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #e8ded2;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--gold);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 25px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--plum);
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.faq-question i {
+  color: var(--gold);
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 25px;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 250px;
+  padding: 0 25px 20px 25px;
+}
+
 /* MODAL */
 .modal-overlay {
   display: none;

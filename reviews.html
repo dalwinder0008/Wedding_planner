@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Reviews & Testimonials | WedHappy</title>
+  <meta name="description" content="Read real reviews and client love testimonials for WedHappy wedding planning, honeymoon getaways, and birthday party management. Submit your own review!">
+  <meta name="keywords" content="wedding planner reviews, client testimonials, WedHappy reviews, event management feedback">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wedhappy.in/reviews.html">
+
+  <link rel="icon" type="image/png" href="public/bg-l.png">
+  <link rel="preload" as="image" href="public/hero%20section.avif" fetchpriority="high">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <main id="mainWebsiteView">
+    <!-- NAVIGATION BAR -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo" id="siteLogo" aria-label="Wedhappy.in home">
+          <img src="public/new-logo.png" alt="WedHappy.in, your dream wedding partner" class="logo-img">
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="wedding.html" class="nav-item">Weddings</a></li>
+            <li><a href="honeymoon.html" class="nav-item">Honeymoons</a></li>
+            <li><a href="birthday.html" class="nav-item">Birthdays</a></li>
+            <li><a href="portfolio.html" class="nav-item">Portfolio</a></li>
+            <li><a href="reviews.html" class="nav-item active">Reviews</a></li>
+            <li><a href="#contact" class="contact-nav-link nav-item">Contact Us</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <span class="hero-eyebrow">WORDS FROM OUR COUPLES &amp; FAMILIES <i class="fa fa-heart"></i> CLIENT LOVE</span>
+      <h1 id="heroTitle">Client Love &amp; Testimonials</h1>
+      <p id="heroSubtitle">Read genuine feedback and heartfelt experiences from couples and families who celebrated their special days with WedHappy.</p>
+      <div class="hero-btn-group">
+        <a href="#reviews" class="btn-luxury">Read Reviews</a>
+        <a href="#userReviewForm" class="btn-luxury btn-gold">Leave Your Review</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS & USER REVIEWS -->
+    <section class="section-padding reviews-section" id="reviews">
+      <div class="section-header">
+        <span class="section-kicker">WORDS FROM OUR COUPLES &amp; FAMILIES</span>
+        <h2 class="section-title">Client Love &amp; Testimonials</h2>
+        <p class="section-subtitle">Real experiences and feedback from our cherished clients</p>
+      </div>
+
+      <div class="testimonial-grid" id="reviewsContainer"></div>
+
+      <div class="add-review-wrapper">
+        <h3 class="serif-font" style="text-align: center; margin-bottom: 12px; font-size: 24px;">Leave Your Review</h3>
+        <p style="text-align:center; font-size: 13px; color: #555; margin-bottom: 25px;">Your genuine feedback means the world to us!</p>
+
+        <form id="userReviewForm">
+          <div class="review-form-grid">
+            <input type="text" id="reviewAuthor" placeholder="Your Full Name" required>
+            <input type="text" id="reviewCity" placeholder="City / Event (e.g., Delhi Wedding)" required>
+            <select id="reviewRating" aria-label="Rating Stars" required>
+              <option value="5">⭐⭐⭐⭐⭐ (5 Stars - Exceptional)</option>
+              <option value="4">⭐⭐⭐⭐ (4 Stars - Great)</option>
+              <option value="3">⭐⭐⭐ (3 Stars - Good)</option>
+            </select>
+          </div>
+          <textarea id="reviewComment" rows="3" placeholder="Describe your experience with our services..." required></textarea>
+          <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="btn-luxury btn-gold">Submit Review</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- GET IN TOUCH FORM -->
+    <section class="contact-wrapper" id="contact">
+      <div class="contact-container">
+        <h2 class="contact-title serif-font">GET IN TOUCH</h2>
+        <form id="weddingInquiryForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <input type="text" id="clientName" placeholder="NAME" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="clientNumber" placeholder="NUMBER" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="weddingDate" placeholder="Event DATE" onfocus="(this.type='date')" onblur="(this.type='text')">
+            </div>
+            <div class="form-group">
+              <input type="text" id="moreInfo" placeholder="MORE INFO">
+            </div>
+          </div>
+          <button type="submit" class="btn-send">SEND</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-col footer-intro">
+            <a href="index.html" class="footer-brand">Wedhappy.in</a>
+            <p>Thoughtfully planned celebrations, made personal.</p>
+          </div>
+          <div class="footer-col">
+            <h3 class="serif-font">EXPLORE</h3>
+            <ul class="footer-links">
+              <li><a href="wedding.html">Weddings</a></li>
+              <li><a href="honeymoon.html">Honeymoons</a></li>
+              <li><a href="birthday.html">Birthdays</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="serif-font">GET IN TOUCH</h3>
+            <ul class="footer-links footer-contact-links">
+              <li><a href="mailto:wedhappyofficial@gmail.com" id="footerEmail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> wedhappyofficial@gmail.com</a></li>
+              <li><a href="tel:+918847386897" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88473 86897 </a></li>
+              <li><a href="tel:+918837531768" id="footerPhone2"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88375 31768 </a></li>
+              <li><a href="https://wa.me/918837531768" id="footerWhatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 88375 31768 <span class="contact-tag-wa">WhatsApp Only</span></a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="serif-font">FOLLOW ALONG</h4>
+            <a href="https://www.instagram.com/grandeventsindia/" class="footer-handle" id="footerHandle" target="_blank" rel="noopener noreferrer">@grandeventsindia</a>
+            <div class="footer-social" aria-label="Social media links">
+              <a href="https://www.facebook.com/wedhappy.in" id="footerFacebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/wedhappy.in/" id="footerInstagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.threads.net/@wedhappy.in" id="footerThreads" target="_blank" rel="noopener noreferrer" aria-label="Threads" title="Threads"><i class="fa-solid fa-at" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; <span id="footerYear"></span> Wedhappy.in. All rights reserved.</span>
+          <details class="footer-policy" id="privacy-policy">
+            <summary>Privacy Policy</summary>
+            <div class="footer-policy-content">
+              <p>Inquiry details and reviews submitted on this site are saved in this browser on this device. They are not sent to a website server by this site.</p>
+              <p>When you submit an inquiry, WhatsApp opens with the details you entered so you can choose whether to send them. WhatsApp handles any information you share there under its own privacy policy.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING ACTIONS -->
+    <div class="floating-actions">
+      <a href="tel:+918847386897" class="action-btn btn-phone" id="floatingPhone" title="Call Us (+91 88473 86897)">
+        <i class="fa fa-phone"></i>
+      </a>
+      <a href="https://wa.me/918837531768?text=Hey,%20I%20am%20looking%20for%20Event%20services." target="_blank" class="action-btn btn-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp (+91 88375 31768)">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </main>
+
+  <!-- Modular Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
