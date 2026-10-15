@@ -368,6 +368,32 @@ footer {
   text-align: center;
 }
 
+.contact-tag {
+  display: inline-block;
+  font-size: 10px;
+  background: rgba(230, 201, 159, 0.2);
+  color: #e6c99f;
+  padding: 1px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contact-tag-wa {
+  display: inline-block;
+  font-size: 10px;
+  background: rgba(37, 211, 102, 0.2);
+  color: #25d366;
+  padding: 1px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .footer-handle {
   display: inline-block;
   margin-bottom: 14px;

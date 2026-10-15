@@ -19,7 +19,10 @@
     "logo": "https://wedhappy.in/public/new-logo.png",
     "image": "https://wedhappy.in/public/new-logo.png",
     "description": "WedHappy is a premier wedding planning, honeymoon planning, and event management agency in India, specializing in luxury weddings, romantic getaways, birthday celebrations, theme decor, catering, and event budget estimation.",
-    "telephone": "+91-8847386897",
+    "telephone": [
+      "+91-8847386897",
+      "+91-8837531768"
+    ],
     "email": "wedhappyofficial@gmail.com",
     "priceRange": "₹₹₹",
     "address": {
@@ -322,8 +325,9 @@
             <h3 class="serif-font">GET IN TOUCH</h3>
             <ul class="footer-links footer-contact-links">
               <li><a href="mailto:wedhappyofficial@gmail.com" id="footerEmail"><i class="fa-solid fa-envelope" aria-hidden="true"></i> wedhappyofficial@gmail.com</a></li>
-              <li><a href="tel:+918847386897" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88473 86897</a></li>
-              <li><a href="https://wa.me/918847386897" id="footerWhatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+              <li><a href="tel:+918847386897" id="footerPhone"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88473 86897 <span class="contact-tag">Call Only</span></a></li>
+              <li><a href="tel:+918837531768" id="footerPhone2"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 88375 31768 <span class="contact-tag">Call</span></a></li>
+              <li><a href="https://wa.me/918837531768" id="footerWhatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 88375 31768 <span class="contact-tag-wa">WhatsApp Only</span></a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -354,10 +358,10 @@
 
     <!-- FLOATING ACTIONS -->
     <div class="floating-actions">
-      <a href="tel:+918847386897" class="action-btn btn-phone" id="floatingPhone" title="Direct Phone Call">
+      <a href="tel:+918847386897" class="action-btn btn-phone" id="floatingPhone" title="Call Us (+91 88473 86897)">
         <i class="fa fa-phone"></i>
       </a>
-      <a href="https://wa.me/918847386897?text=Hey,%20I%20am%20looking%20for%20Event%20services." target="_blank" class="action-btn btn-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp">
+      <a href="https://wa.me/918837531768?text=Hey,%20I%20am%20looking%20for%20Event%20services." target="_blank" class="action-btn btn-whatsapp" id="floatingWhatsapp" title="Chat on WhatsApp (+91 88375 31768)">
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
@@ -501,11 +505,15 @@
               <textarea id="editHeroSubtitle" rows="3" required></textarea>
             </div>
             <div class="admin-form-group">
-              <label for="editPhone">Contact Phone Number</label>
+              <label for="editPhone">Contact Phone 1 (Call Only)</label>
               <input type="text" id="editPhone" required>
             </div>
             <div class="admin-form-group">
-              <label for="editWhatsapp">WhatsApp Number (Country code included, no + or spaces)</label>
+              <label for="editPhone2">Contact Phone 2 (Call)</label>
+              <input type="text" id="editPhone2" required>
+            </div>
+            <div class="admin-form-group">
+              <label for="editWhatsapp">WhatsApp Number (e.g., 918837531768 - Country code included, no + or spaces)</label>
               <input type="text" id="editWhatsapp" required>
             </div>
             <div class="admin-form-group">

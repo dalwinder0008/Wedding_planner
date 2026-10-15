@@ -35,6 +35,9 @@ const AdminModule = (() => {
     document.getElementById('editHeroTitle').value = settings.heroTitle;
     document.getElementById('editHeroSubtitle').value = settings.heroSubtitle;
     document.getElementById('editPhone').value = settings.phone;
+    if (document.getElementById('editPhone2')) {
+      document.getElementById('editPhone2').value = settings.phone2 || '+91 88375 31768';
+    }
     document.getElementById('editWhatsapp').value = settings.whatsapp;
     document.getElementById('editEmail').value = settings.email;
     document.getElementById('editSocialHandle').value = settings.socialHandle;
@@ -227,6 +230,7 @@ const AdminModule = (() => {
         heroTitle: document.getElementById('editHeroTitle').value,
         heroSubtitle: document.getElementById('editHeroSubtitle').value,
         phone: document.getElementById('editPhone').value,
+        phone2: document.getElementById('editPhone2') ? document.getElementById('editPhone2').value : '+91 88375 31768',
         whatsapp: document.getElementById('editWhatsapp').value,
         email: document.getElementById('editEmail').value,
         socialHandle: document.getElementById('editSocialHandle').value,

@@ -11,7 +11,8 @@ const StorageModule = (() => {
     heroTitle: "Your once-in-a-lifetime celebration, beautifully planned.",
     heroSubtitle: "From the first moodboard to the final vidaai, we design warm, joyful celebrations that feel completely yours.",
     phone: "+91 88473 86897",
-    whatsapp: "918847386897",
+    phone2: "+91 88375 31768",
+    whatsapp: "918837531768",
     email: "wedhappyofficial@gmail.com",
     socialHandle: "@wedhappy.in",
     estimatorRates: {
@@ -56,8 +57,9 @@ const StorageModule = (() => {
     { id: 5, category: "birthday", url: "public/Brthday/concept,themeand%20decoration.jpg" },
     { id: 6, category: "wedding", url: "public/shooting.jpg" },
     { id: 7, category: "wedding", url: "public/foodandketringt.jpg" },
-    { id: 8, category: "honeymoon", url: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80" },
-    { id: 9, category: "honeymoon", url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" }
+    { id: 8, category: "honeymoon", url: "public/honeymoon-1.jpg" },
+    { id: 9, category: "honeymoon", url: "public/honeymoon-2.jpg" },
+    { id: 10, category: "honeymoon", url: "public/honeymoon-3.jpg" }
   ];
 
   const defaultReviews = [
@@ -103,15 +105,19 @@ const StorageModule = (() => {
   function getSettings() {
     const settings = get(KEYS.SETTINGS, {});
 
-    // Migrate any legacy cached numbers/emails in localStorage
-    if (settings.phone && (settings.phone.includes('8837531768') || settings.phone.includes('88375'))) {
-      settings.phone = defaultSettings.phone;
-      settings.whatsapp = defaultSettings.whatsapp;
-      set(KEYS.SETTINGS, settings);
-    }
-    if (settings.email && (settings.email.toLowerCase() === 'ashish73409@gmail.com')) {
+    // Ensure phone numbers and single WhatsApp number are properly aligned
+    settings.phone = defaultSettings.phone; // +91 88473 86897 (Call Only)
+    settings.phone2 = defaultSettings.phone2; // +91 88375 31768 (Call)
+    settings.whatsapp = "918837531768"; // WhatsApp is strictly 8837531768
+    if (!settings.email || settings.email.toLowerCase() === 'ashish73409@gmail.com') {
       settings.email = defaultSettings.email;
-      set(KEYS.SETTINGS, settings);
+    }
+    set(KEYS.SETTINGS, settings);
+
+    // Migrate any cached gallery to use local public/ images
+    const gallery = get(KEYS.GALLERY, null);
+    if (gallery && gallery.some(g => g.url && (g.url.includes('unsplash.com') || g.url.startsWith('http')))) {
+      set(KEYS.GALLERY, defaultGallery);
     }
 
     const estimatorRates = settings.estimatorRates || {};
